@@ -15,6 +15,11 @@ html {
 
 /* Carousel */
 
+#carousel-container {
+  height: 500px;
+  width: 800px;
+}
+
 .slider {
 	background-color: #f7f7f7;
 	/* position: relative; */

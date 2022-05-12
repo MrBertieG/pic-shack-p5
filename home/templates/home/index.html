@@ -2,62 +2,67 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+
 {% endblock %}
 
 {% block content %}
-<div class="container" >
 
-    <div class="slider mx-auto" style="width: 30%;"> 
-    <!-- picture 01 -->
-        <div class="slide active-slide d-flex justify-content-center">
-            <div class="container text-center">
-                <img src="media/free_img/Optimized-chris-lee-70l1tDAI6rM-unsplash.jpg" class="img-fluid"> 
+<div class="container p-lg-5" id="carousel-container">
+    <div class="row p-lg-5">
+        <div class="col my-auto">
+
+            <div class="slider mx-auto"> 
+            <!-- picture 01 -->
+            <div class="slide active-slide">
+                <div class="container text-center">
+                    <img src="media/carousel_img/building_reflection_paiting.jpg" class="img-fluid"> 
+                </div>
+            </div>
+            <!-- picture 02 -->
+            <div class="slide">
+                <div class="container">
+                    <img src="media/carousel_img/pebbles_love_art.jpg" class="img-fluid"> 
+                </div>
+            </div>
+            <!-- picture 03 -->
+            <div class="slide">
+                <div class="container">
+                    <img src="media/carousel_img/pendulum_bulbs_picture.jpg" class="img-fluid">
+                </div>
+            </div>
+            <!-- picture 04 -->
+            <div class="slide">
+                <div class="container">
+                    <img src="media/carousel_img/social_media_art.jpg" class="img-fluid">
+                </div>
+            </div>
+            <!-- picture 05 -->
+            <div class="slide">
+                <div class="container">
+                    <img src="media/carousel_img/whale_floating_city_ilustration.jpg" class="img-fluid">
+                </div>
+            </div>
+            </div>  
+            <!-- Slider nav -->
+            <div class="slider-nav"> 
+            <a href="" class="arrow-prev"><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-prev.png"></a>
+            <ul class="slider-dots">
+                <li class="dot active-dot">&bull;</li>
+                <li class="dot">&bull;</li>
+                <li class="dot">&bull;</li>
+                <li class="dot">&bull;</li>
+                <li class="dot">&bull;</li>
+            </ul>
+            <a href="" class="arrow-next"><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-next.png"></a> 
             </div>
         </div>
-
-    <!-- picture 02 -->
-    <div class="slide">
-        <div class="container">
-            <img src="media/free_img/Optimized-natalie-dmay-mGXxkgre848-unsplash.jpg"> 
-        </div>
-    </div>
-    <!-- picture 03 -->
-    <div class="slide">
-        <div class="container">
-            <img src="media/free_img/Optimized-pexels-chait-goli-1918290.jpg">
-        </div>
-    </div>
-    <!-- picture 04 -->
-    <div class="slide">
-        <div class="container">
-            <img src="media/free_img/Optimized-pexels-daniel-torobekov-5244261.jpg">
-        </div>
-    </div>
-    <!-- picture 05 -->
-    <div class="slide">
-        <div class="container">
-            <img src="media/free_img/Optimized-pexels-nesrin-öztürk-12008337.jpg">
-        </div>
-    </div>
-    </div>  
-    <!-- Slider nav -->
-    <div class="slider-nav"> 
-    <a href="" class="arrow-prev"><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-prev.png"></a>
-    <ul class="slider-dots">
-        <li class="dot active-dot">&bull;</li>
-        <li class="dot">&bull;</li>
-        <li class="dot">&bull;</li>
-        <li class="dot">&bull;</li>
-        <li class="dot">&bull;</li>
-    </ul>
-    <a href="" class="arrow-next"><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-next.png"></a> 
     </div>
 <!--End of slide show-->
 
 </div> <!-- /container -->
+{% endblock %}
+
+{% block postloadjs %}
+  {{ block.super }}
+  {% include 'home/carousel.html' %}
 {% endblock %}
