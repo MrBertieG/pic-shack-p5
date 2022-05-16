@@ -1,79 +1,62 @@
 <script type="text/javascript">
-  // var slideSpeed = 10000;
+  $('#myCarousel').carousel({
+  interval: false
+});
+$('#carousel-thumbs').carousel({
+  interval: false
+});
 
-  var main = function(){
-      //Carousel
-    setInterval(function() {timedDelay()}, slideSpeed);
-    //arrow-next
-    $('.arrow-next').click(function(e){
-        e.preventDefault();
-      
-      var currentSlide = $('.active-slide');
-      var nextSlide= currentSlide.next();
+// handles the carousel thumbnails
+// https://stackoverflow.com/questions/25752187/bootstrap-carousel-with-thumbnails-multiple-carousel
+$('[id^=carousel-selector-]').click(function() {
+  var id_selector = $(this).attr('id');
+  var id = parseInt( id_selector.substr(id_selector.lastIndexOf('-') + 1) );
+  $('#myCarousel').carousel(id);
+});
+// Only display 3 items in nav on mobile.
+if ($(window).width() < 575) {
+  $('#carousel-thumbs .row div:nth-child(4)').each(function() {
+    var rowBoundary = $(this);
+    $('<div class="row mx-0">').insertAfter(rowBoundary.parent()).append(rowBoundary.nextAll().addBack());
+  });
+  $('#carousel-thumbs .carousel-item .row:nth-child(even)').each(function() {
+    var boundary = $(this);
+    $('<div class="carousel-item">').insertAfter(boundary.parent()).append(boundary.nextAll().addBack());
+  });
+}
+// Hide slide arrows if too few items.
+if ($('#carousel-thumbs .carousel-item').length < 2) {
+  $('#carousel-thumbs [class^=carousel-control-]').remove();
+  $('.machine-carousel-container #carousel-thumbs').css('padding','0 5px');
+}
+// when the carousel slides, auto update
+$('#myCarousel').on('slide.bs.carousel', function(e) {
+  var id = parseInt( $(e.relatedTarget).attr('data-slide-number') );
+  $('[id^=carousel-selector-]').removeClass('selected');
+  $('[id=carousel-selector-'+id+']').addClass('selected');
+});
+// when user swipes, go next or previous
+$('#myCarousel').swipe({
+  fallbackToMouseEvents: true,
+  swipeLeft: function(e) {
+    $('#myCarousel').carousel('next');
+  },
+  swipeRight: function(e) {
+    $('#myCarousel').carousel('prev');
+  },
+  allowPageScroll: 'vertical',
+  preventDefaultEvents: false,
+  threshold: 75
+});
+/*
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
+*/
 
-        var currentDot = $('.active-dot');
-      var nextDot = currentDot.next();
-      
-      if(nextSlide.length === 0){
-        nextSlide = $('.slide').first();
-          nextDot = $('.dot').first();
-      }
-          
-        currentSlide.fadeOut(600, function() {
-          $(this).removeClass('active-slide');
-      nextSlide.fadeIn(600).addClass('active-slide');
-          
-        currentDot.removeClass('active-dot');
-      nextDot.addClass('active-dot');
-        });
-    });
-    //arrow-prev
-    $('.arrow-prev').click(function(e){
-        e.preventDefault();
-      
-      var currentSlide = $('.active-slide');
-      var prevSlide= currentSlide.prev();
-        
-        var currentDot = $('.active-dot');
-      var prevDot = currentDot.prev();
-      
-      if(prevSlide.length === 0){
-        prevSlide = $('.slide').last();
-          prevDot = $('.dot').last();
-      }
-      
-        currentSlide.fadeOut(600, function() {
-          $(this).removeClass('active-slide');
-      prevSlide.fadeIn(600).addClass('active-slide');
-        
-        currentDot.removeClass('active-dot');
-      prevDot.addClass('active-dot');
-        });
-    });
-  };
-
-  //timedDelay function
-  function timedDelay() {
-
-    var currentSlide = $('.active-slide');
-    var nextTimedSlide = currentSlide.next();
-    
-    var currentDot = $('.active-dot');
-    var nextDot = currentDot.next();
-    
-    if(nextTimedSlide.length === 0 ) {
-      nextTimedSlide = $('.slide').first();
-      nextDot = $('.dot').first();
-    }
-    
-    currentSlide.fadeOut(600, function() {
-      $(this).removeClass('active-slide');
-    nextTimedSlide.fadeIn(600).addClass('active-slide');
-      
-      currentDot.removeClass('active-dot');
-      nextDot.addClass('active-dot');
-      });
-  }
-
-  $(document).ready(main);
+$('#myCarousel .carousel-item img').on('click', function(e) {
+  var src = $(e.target).attr('data-remote');
+  if (src) $(this).ekkoLightbox();
+});
   </script>
