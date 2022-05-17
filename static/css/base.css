@@ -28,6 +28,10 @@ html {
   .p-nav {
     font-size: 11px;
   }
+
+  .ham-menu {
+    background-color: #fff;
+  }
 }
 
 
