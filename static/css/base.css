@@ -24,6 +24,14 @@ html {
   display: flex!important;
 }
 
+@media (max-width: 1249px) {
+  .p-nav {
+    font-size: 11px;
+  }
+}
+
+
+/*Codepen Carousel */
 
 .carousel {
   position: relative;
