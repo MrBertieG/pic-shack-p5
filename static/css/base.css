@@ -34,6 +34,16 @@ html {
   }
 }
 
+@media (min-width: 992px) {
+  #no-height {
+    height: 0;
+}
+
+}
+
+
+
+
 
 
 /*Codepen Carousel */
