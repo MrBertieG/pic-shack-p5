@@ -108,16 +108,17 @@
         </div>
         <!--L, M, S Screen Size Header-->
         <div class="row d-xl-none main-header">
+            <div class="pic-logo d-none d-sm-block">
+                <img src="media/logo/picshack-logo.001.png" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
+            </div>
             <nav class="navbar navbar-light w-100 justify-content-between">
                 <button class="navbar-toggler ham-menu" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="pic-logo d-none d-sm-block">
-                    <img src="media/logo/picshack-logo.001.png" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
-                </div>
-                {% include 'includes/main-nav.html' %}
+
                 {% include 'includes/mobile-top-header.html' %}                
             </nav>
+            {% include 'includes/main-nav.html' %}
         </div>
         
     </header>
