@@ -38,19 +38,20 @@
 
   <body>
     <header class="container-fluid fixed-top ">
-        <div class="row d-none d-lg-flex main-header p-lg-2">
+        <!--XL Screens Header-->
+        <div class="row d-none d-xl-flex main-header p-lg-2">
             <!--Picture Logo Column-->
-            <div class="col-lg-3 my-auto">
+            <div class="col-md-4 col-xl-3 my-auto">
                 <img src="media/logo/picshack-logo.001.png" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
             </div>
 
             <!--Code inspired by CI tutorial-->
             <!--Categories Section-->
-            <div class="col-lg-4 my-auto navbar-expand" id="categories-header">
+            <div class="col-xl-4 my-auto navbar-expand" id="categories-header">
                 {% include 'includes/main-nav.html' %}
             </div>
             <!--Search Bar-->
-            <div class="col-lg-3 my-auto">
+            <div class="col-xl-3 my-auto">
                 <form method="GET" action="#"> <!--URL Needed Updating-->
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -66,7 +67,7 @@
             </div>
 
             <!--My Account and Basket-->
-            <div class="col-lg-2 my-auto">
+            <div class="col-xl-2 my-auto p-0">
                 <ul class="list-inline list-unstyled text-center my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -105,24 +106,20 @@
                 </ul>
             </div>
         </div>
+        <!--L, M, S Screen Size Header-->
+        <div class="row d-xl-none main-header">
+            <nav class="navbar navbar-expand navbar-light w-100 justify-content-between">
+                <button class="navbar-toggler ham-menu" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="pic-logo">
+                    <img src="media/logo/picshack-logo.001.png" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
+                </div>
+                {% include 'includes/main-nav.html' %}
+                {% include 'includes/mobile-top-header.html' %}                
+            </nav>
+        </div>
     </div>
-
-    <div class="row main-header" id="no-height">
-        <nav class="navbar navbar-expand-md navbar-light w-100">
-            <button class="navbar-toggler ham-menu" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            {% include 'includes/mobile-top-header.html' %}
-            {% include 'includes/main-nav.html' %}
-
-        </nav>
-    </div>
-    <!-- <div id="delivery-banner" class="row text-center">
-        <div class="col bg-black text-white">
-            <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                
-        </div>            
-    </div> -->
-
     </header>
 
     {% if messages %}
