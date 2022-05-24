@@ -10,6 +10,20 @@ html {
     height: 50px;
 }
 
+.product-border{
+  border: 3px solid black;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
 #categories-header {
   /* display: flex!important; */
   justify-content: space-around;
