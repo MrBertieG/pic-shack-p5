@@ -3,19 +3,19 @@
     <ul class="list-inline list-unstyled text-center d-flex justify-content-between w-auto mx-auto">
         <li class="nav-item dropdown my-auto">
             <a class="logo-font font-weight-bold nav-link text-white invisible1" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
+                Prints
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{}?sort=price&direction=asc" class="dropdown-item">By Price</a> <!--Add Link-->
                 <a href="{}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a> <!--Add Link-->
                 <a href="{}?sort=category&direction=asc" class="dropdown-item ">By Category</a> <!--Add Link-->
-                <a href="{}" class="dropdown-item">Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item">Prints</a>
             </div>
         </li>
 
         <li class="nav-item dropdown my-auto">
             <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
+                Best Sellers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
                 <a href="{}?category=activewear,essentials" class="dropdown-item">Activewear &amp; Essentials</a><!--Add Link-->
@@ -27,7 +27,7 @@
 
         <li class="nav-item dropdown my-auto">
             <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
+                New Arrivals
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
                 <a href="{}?category=bed_bath" class="dropdown-item">Bed &amp; Bath</a><!--Add Link-->
@@ -38,7 +38,7 @@
 
         <li class="nav-item dropdown my-auto">
             <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category
+                Clearance
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
                 <a href="{}?category=new_arrivals" class="dropdown-item">New Arrivals</a><!--Add Link-->
