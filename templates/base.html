@@ -42,7 +42,9 @@
         <div class="row d-none d-xl-flex main-header p-lg-2">
             <!--Picture Logo Column-->
             <div class="col-md-4 col-xl-3 my-auto">
-                <img src="media/logo/picshack-logo.001.png" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
+                <a href="{% url 'home' %}">
+                    <img src="media/logo/picshack-logo.001.png" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
+                </a>
             </div>
 
             <!--Code inspired by CI tutorial-->
@@ -54,7 +56,7 @@
             
             <!--Search Bar-->
             <div class="col-xl-3 my-auto">
-                <form method="GET" action="#"> <!--URL Needed Updating-->
+                <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
@@ -111,7 +113,9 @@
         <!--L, M, S Screen Size Header-->
         <div class="row d-xl-none main-header">
             <div class="pic-logo d-none d-sm-block">
-                <img src="media/logo/picshack-logo.001.png" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
+                <a href="{% url 'home' %}">
+                    <img src="media/logo/picshack-logo.001.png" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
+                </a>
             </div>
             <nav class="navbar navbar-light w-100 justify-content-between">
                 <button class="navbar-toggler ham-menu" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
