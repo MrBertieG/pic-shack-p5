@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -54,7 +53,7 @@
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        <form class="form update-form" method="POST" action="{}"> <!--Update URL-->
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -88,7 +87,7 @@
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -112,7 +111,7 @@
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <a href="{}" class="btn btn-black rounded-0 btn-lg"> <!----> update url
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
@@ -138,7 +137,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
     // Update quantity on click
