@@ -121,7 +121,7 @@
                 </a>
                 {% else %}
                 <a href="{% url 'product_detail' product.id %}">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}/not_available.jpg" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}media/not_available.jpg" alt="{{ product.name }}">
                 </a>
                 {% endif %}
                 <div class="card-body pb-0">
@@ -145,8 +145,8 @@
                             {% endif %}
                             {% if request.user.is_superuser %}
                                 <small class="ml-3">
-                                    <a href="{}">Edit</a> | <!--Update URL-->
-                                    <a class="text-danger" href="{}">Delete</a> <!--Update URL-->
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | <!--Update URL-->
+                                    <a class="text-danger" href="">Delete</a> <!--Update URL-->
                                 </small>
                             {% endif %}
                         </div>
