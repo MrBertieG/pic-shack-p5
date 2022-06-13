@@ -2,8 +2,11 @@ html {
     height: 100%;
 }
 
-.main-header {
+/*-------------------------------------Main-Nav */
+#main-header {
     background-color: black;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 #pic-logo {
@@ -12,6 +15,10 @@ html {
 
 .product-border{
   border: 3px solid black;
+}
+
+.fa-search {
+  color:#fff;
 }
 
 .overlay {
@@ -32,10 +39,15 @@ html {
 
 .header-container {
   padding-top: 100px;
+  margin-bottom: -20px;
 }
 
 .input-group {
   display: flex!important;
+}
+
+#info-banner {
+  background-color: #7e8299;
 }
 
 @media (max-width: 1249px) {
