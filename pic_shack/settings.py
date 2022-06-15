@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'stripe',
     'storages',
+    'newsletters',
 ]
 
 MIDDLEWARE = [

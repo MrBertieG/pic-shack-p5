@@ -165,7 +165,30 @@
     {% endblock %}
 
     {% block footer %}
-
+    <footer>
+        <br>
+        <div id="info-banner" class="row">
+            <div class="col text-dark d-flex justify-content-center">
+                <p class="p-5 p-size">Fast Delivery <i class="fa-solid fa-truck"></i></p>
+                <p class="p-5 p-size">Free Shipping Over £50 <i class="fa-solid fa-box"></i></p>
+                <p class="p-5 p-size">PicShack and Sustainability <i class="fa-solid fa-seedling"></i></p>
+                <p class="p-5 p-size">Secure Paymenet <i class="fa-brands fa-cc-stripe"></i></p>
+            </div>
+        <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Want to hear from us? Join our world!</p>
+                <p>Sign up be the first to see our new arrivals</p>
+                <form method ="POST" action="{% url 'newsletters_signup' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="Submit" > Sign me up!</button>
+                </form>
+            </div>
+            <div class="col">PicShack</div>
+        </div>
+    </footer>
     {% endblock %}
 </body>
 </html>

@@ -47,7 +47,7 @@ html {
 }
 
 #info-banner {
-  background-color: #7e8299;
+  background-color: rgb(212, 213, 214, 0.9);
 }
 
 @media (max-width: 1249px) {
@@ -81,6 +81,16 @@ html {
 
 #img-border {
   border: 15px solid #fff;
+}
+
+.text-p {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 2px;
+}
+
+.p-size {
+  font-size: 20px;
 }
 
 .image-container {
