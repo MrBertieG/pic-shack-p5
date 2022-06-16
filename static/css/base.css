@@ -50,6 +50,10 @@ html {
   background-color: rgb(212, 213, 214, 0.9);
 }
 
+.subscribe-form {
+  background-color: rgb(212, 213, 214, 0.9);
+}
+
 @media (max-width: 1249px) {
   .p-nav {
     font-size: 11px;
