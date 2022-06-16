@@ -64,17 +64,17 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="deleteModalLabel">You are deleting a product!!</h5>
-                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                <h5 class="modal-title" id="deleteModalLabel">You are deleting a product!</h5>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><strong>X</strong></button>
                             </div>
                                 <div class="modal-body">
                                     Are you sure you want to delete this post?
                                 </div>
                                 <div class="modal-footer">
                                     <div class="btn d-inline-block btn-danger">
-                                        <a class="text-decoration-none delete-anchor" href="{% url 'delete_product' product.id %}">Delete</a>
+                                        <a class="text-decoration-none delete-anchor text-white" href="{% url 'delete_product' product.id %}">Delete<i class="far fa-trash-alt"></i></a>
                                     </div>
-                                    <button type="button" class="btn close-btn" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +142,12 @@
             <p class="m-0 text-p">Made in UK <i class="fa-solid fa-flag"></i></p>
             <p class="m-0 text-p">100% Recycled Materials <i class="fa-solid fa-recycle"></i></p>
         </div>
+    </div>
+    <div class="row">
+        <div class="col text-dark d-flex justify-content-left m-5 w-80">
+        <p>Picshack loves trends and that’s why we always ensure we offer you the newest of the new in posters and prints. 
+            We are continuously expanding our range and we regularly add new designs by talented designers, photographers and illustrators.</p>
+            </div>
     </div>
 
 {% endblock %}
