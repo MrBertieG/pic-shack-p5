@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .models import UserNewsletterSub
+from .forms import NewsletterForm
 
 # Create your views here.
 
