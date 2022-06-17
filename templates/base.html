@@ -81,6 +81,8 @@
                                 <p class="my-0 p-nav">
                                     {% if request.user.is_authenticated %}
                                     {{ request.user.username }}
+                                    {% else %}
+                                    <p class="my-0 p-nav">Sign In</p>
                                     {% endif %}
                                 </p>
                             </div>
@@ -101,7 +103,7 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fa-solid fa-bag-shopping fa-m"></i></div>
+                                <div><i class="fa-solid fa-bag-shopping fa-lg"></i></div>
                                 <p class="my-0 text-white p-nav">
                                     {% if grand_total %}
                                         £{{ grand_total|floatformat:2 }}

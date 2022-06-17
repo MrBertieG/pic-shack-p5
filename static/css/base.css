@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Exo:wght@100;200;300;400;500;600;700;800;900&family=Oxygen:wght@300&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 html {
     height: 100%;
+}
+
+body {
+  font-family: Comfortaa, Arial, Helvetica, sans-serif;
 }
 
 /*-------------------------------------Main-Nav */
@@ -36,6 +42,18 @@ html {
 .header-container {
   padding-top: 100px;
   margin-bottom: -20px;
+}
+
+.a-nav {
+
+}
+
+.a-nav:hover{
+  background-color: rgb(212, 213, 214, 0.9);
+  color: black;
+  border-radius: 5px;
+  text-decoration: none!important;
+  cursor: pointer;
 }
 
 .input-group {

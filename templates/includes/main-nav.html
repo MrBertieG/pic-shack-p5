@@ -1,8 +1,8 @@
 <!--Medium, Small Displays-->
 <div class="collapse d-xl-none w-100" id="main-nav">
     <ul class="list-inline list-unstyled text-center d-flex justify-content-between w-auto mx-auto">
-        <li class="nav-item dropdown my-auto">
-            <a class="logo-font font-weight-bold nav-link text-white" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown my-auto a-nav">
+            <a class="text-white" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Prints
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -13,8 +13,8 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown my-auto">
-            <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown my-auto a-nav">
+            <a class="text-white" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Best Sellers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
@@ -25,8 +25,8 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown my-auto">
-            <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown my-auto a-nav">
+            <a class="text-white" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 New Arrivals
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
@@ -37,8 +37,8 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown my-auto">
-            <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown my-auto a-nav">
+            <a class="text-white a-nav" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Clearance
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
@@ -53,9 +53,9 @@
 
 <!--XL Displays-->
 <div class="d-none d-xl-flex">
-    <ul class="w-auto mx-auto list-inline list-unstyled text-center my-0 d-flex">
-        <li class="my-auto list-inline-item">
-            <a class="logo-font font-weight-bold nav-link text-white invisible1" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <ul class="w-auto mx-auto list-inline list-unstyled text-center my-0 d-flex justify-content-between">
+        <li class="my-auto list-inline-item a-nav">
+            <a class="text-white p-0 mr-1 ml-1" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Prints
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -66,8 +66,8 @@
             </div>
         </li>
 
-        <li class="my-auto list-inline-item">
-            <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="my-auto list-inline-item a-nav">
+            <a class="text-white p-0 mr-1 ml-1" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Best Sellers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
@@ -78,8 +78,8 @@
             </div>
         </li>
 
-        <li class="my-auto list-inline-item">
-            <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="my-auto list-inline-item a-nav">
+            <a class="text-white p-0 mr-1 ml-1" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 New Arrivals
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
@@ -90,12 +90,11 @@
             </div>
         </li>
 
-        <li class="my-auto list-inline-item">
-            <a class="invisible1 logo-font font-weight-bold nav-link text-white" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="my-auto list-inline-item a-nav">
+            <a class="text-white p-0 mr-1 ml-1" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Clearance
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
                 <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
                 <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
             </div>
