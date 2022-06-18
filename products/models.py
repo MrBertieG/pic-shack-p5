@@ -1,4 +1,5 @@
 from django.db import models
+from profiles.models import UserProfile
 
 
 class Category(models.Model):
@@ -29,3 +30,14 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    user = models.ForeignKey(UserProfile, models.CASCADE)
+    product = models.ForeignKey(Product, models.CASCADE)
+    comment = models.TextField(max_length=250)
+    rate = models.IntegerField(default=0)
+    created_on = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.id)

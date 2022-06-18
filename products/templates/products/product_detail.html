@@ -50,6 +50,45 @@
                         <small class="text-muted">No Rating</small>
                     {% endif %}
                     <br>
+                    {% if request.user.is_authenticated || request.user.is_superuser %}
+                        <!-- Modal trigger button -->
+                        <button type="button" class="btn btn-sm main-btn ms-2 text-primary" data-toggle="modal" data-target="#reviewModal">
+                            Leave a review  <i class="fa-solid fa-star-half-stroke"></i>
+                        </button> 
+                        <!-- Modal for activating the review form-->
+                        <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="reviewModalLabel">Leave a review.</h5>
+                                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><strong>X</strong></button>
+                                </div>
+                                    <div class="modal-body">
+                                        <form class="" action="/" method="GET" action="/review">
+                                            {% for product in products %}
+                                            <input type="hidden" name="product_id" value="{{product.id}}">
+                                            {% endfor %}
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Review title...">
+                                              </div>
+                                              <div class="form-group">
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Leave review here..."></textarea>
+                                              </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="btn d-inline-block btn-danger">
+                                            <a class="text-decoration-none delete-anchor text-white" href="{% url 'review_product' product.id %}">Leave review<i class="fa-solid fa-check"></i></a>
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{% url 'account_login' %}">Sign in to leave a review</a>
+                    {% endif %}
+                    <br>
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
                             <a href="{% url 'edit_product' product.id %}" class="btn btn-sm main-btn ms-2 text-decoration-none text-info delete-anchor" id="edit-btn">Edit <i class="fas fa-pen fa-sm"></i></a> | 

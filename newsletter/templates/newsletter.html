@@ -10,3 +10,25 @@
         </div>
     </div>
 {% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <p class="text-center">Subscribe and be the first to hear about our offers!</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-12 mx-auto py-5">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input type="submit" class="btn btn-blue">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
