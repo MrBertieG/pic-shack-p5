@@ -36,3 +36,6 @@ def contact_us(request):
 
     return render(request, 'home/contact_us.html', context)
 
+def privacy(request):
+    """A view to render the privacy page"""
+    return render(request, 'home/privacy.html')
