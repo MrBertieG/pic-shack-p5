@@ -1,5 +1,5 @@
 from django.db import models
-from profiles.models import UserProfile
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -32,12 +32,26 @@ class Product(models.Model):
         return self.name
 
 
+RATE_CHOICES = [
+    (1, '1 - Will not recommend'),
+    (2, '1 - Could be beter'),
+    (3, '1 - It\'s ok'),
+    (4, '1 - I love it!')
+]
+
+
 class Review(models.Model):
-    user = models.ForeignKey(UserProfile, models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name="user_reviews")
     product = models.ForeignKey(Product, models.CASCADE)
-    comment = models.TextField(max_length=250)
-    rate = models.IntegerField(default=0)
+    review = models.TextField(max_length=250)
+    rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES, blank=True)
     created_on = models.DateField(auto_now_add=True)
 
+
+    class Meta:
+        """Reviews in descending order"""
+        ordering = ["-created_on"]
+    
     def __str__(self):
-        return str(self.id)
+        return self.user.username

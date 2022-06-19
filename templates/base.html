@@ -73,7 +73,7 @@
 
             <!--My Account and Basket-->
             <div class="col-xl-2 my-auto p-0">
-                <ul class="list-inline list-unstyled text-center my-0">
+                <ul class="list-inline list-unstyled text-center my-0" style="object-fit: contain;">
                     <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
@@ -82,7 +82,7 @@
                                     {% if request.user.is_authenticated %}
                                     {{ request.user.username }}
                                     {% else %}
-                                    <p class="my-0 p-nav">Sign In</p>
+                                    Sign In
                                     {% endif %}
                                 </p>
                             </div>

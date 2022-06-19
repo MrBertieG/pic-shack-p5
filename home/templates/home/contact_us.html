@@ -12,11 +12,21 @@
 {% block content %}
 <div class="row">
     <div class="col-md-5 col-12 mx-auto py-5">
+        <h2>Get in touch, send us a message!</h2>
         <form action="" method="POST">
             {% csrf_token %}
             {{ form|crispy }}
-            <button class="btn btn-blue float-right">Submit</button>
+            <button class="btn btn-secondary float-right">Submit</button>
         </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5 col-12 mx-auto py-5">
+        <h3>Office address:</h3>
+        <p>Somerset Road, Folkestone, Kent, United Kingdom, CT19 4NW</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2506.0117437270283!2d1.1412736160836205!3d51.089790779568744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47debf4ad0141293%3A0x25c4251bfd39340f!2sSomerset%20Rd%2C%20Folkestone!5e0!3m2!1sen!2suk!4v1655644890130!5m2!1sen!2suk" 
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </div>
 

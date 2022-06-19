@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Product, Category, Review
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
@@ -18,7 +18,6 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
-    review = Review.objects.filter(id=id)
 
     if request.GET:
         if 'sort' in request.GET:
@@ -53,7 +52,6 @@ def all_products(request):
 
     context = {
         'products': products,
-        'review': review,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
@@ -66,11 +64,11 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    review = Review.objects.filter()
+    review = Review.objects.filter(pk=product_id)
 
     context = {
         'product': product,
-        'review': review,
+        'reviews': review,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -147,10 +145,21 @@ def delete_product(request, product_id):
 @login_required
 def review_product(request, product_id):
     """A view to allow a user to leave a review on a product they purchased"""
-    if request.method == "GET":
-        product = get_object_or_404(Product, pk=product_id)
-        comment = request.GET.get('comment')
-        rate = request.GET.get('rate')
-        user = request.user
-        Review(user=user, product=product, comment=comment, rate=rate).save()
-        return redirect('product_detail', id=product_id)
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save(commit=False)
+            messages.success(request, 'Successfully added review!')
+
+        else:
+            form = ReviewForm()
+        
+            template = 'products/product_detail.html'
+            context = {
+                'form': form,
+            }
+
+            return render(request, template, context)
+

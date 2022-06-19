@@ -12,11 +12,11 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <a href="{% url 'products' %}" class="btn rounded-0 mt-5">
+            <a href="{% url 'products' %}" class="btn m-5">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
-                <span class="text-uppercase">Keep Shopping</span>
+                <span>Keep Shopping</span>
             </a>
         </div>
         <div class="row">
@@ -63,8 +63,13 @@
                                     <h5 class="modal-title" id="reviewModalLabel">Leave a review.</h5>
                                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><strong>X</strong></button>
                                 </div>
+
+
+
+
                                     <div class="modal-body">
-                                        <form class="" action="/" method="GET" action="/review">
+                                        <form class="" action="{% url 'product_detail' product.id %}" method="POST">
+                                            {% csrf_token %}
                                             {% for product in products %}
                                             <input type="hidden" name="product_id" value="{{product.id}}">
                                             {% endfor %}
@@ -76,6 +81,10 @@
                                               </div>
                                         </form>
                                     </div>
+
+
+
+
                                     <div class="modal-footer">
                                         <div class="btn d-inline-block btn-danger">
                                             <a class="text-decoration-none delete-anchor text-white" href="{% url 'review_product' product.id %}">Leave review<i class="fa-solid fa-check"></i></a>
@@ -127,9 +136,9 @@
                                 <div class="col-12">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value="xs">Size 1</option>
-                                        <option value="s">Size 2</option>
-                                        <option value="m" selected>Size 3</option>
+                                        <option value="small">Small 40 x 50 cm</option>
+                                        <option value="medium">Medium 50 x 70 cm</option>
+                                        <option value="large" selected>Large 70 x 100 cm</option>
                                     </select>
                                 </div>
                             {% endif %}
@@ -173,6 +182,13 @@
                     <p class="mt-3">{{ product.description }}</p>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            {% for review in reviews %}
+            <p>{{review.user.username}}</p>
+            <p>{{review.created_on}}</p>
+            <p>{{review.comment}}</p>
+            {% endfor %}
         </div>
     </div>
     <div id="info-banner" class="row">

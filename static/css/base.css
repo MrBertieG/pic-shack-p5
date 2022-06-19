@@ -44,10 +44,6 @@ body {
   margin-bottom: -20px;
 }
 
-.a-nav {
-
-}
-
 .a-nav:hover{
   background-color: rgb(212, 213, 214, 0.9);
   color: black;
@@ -66,6 +62,10 @@ body {
 
 .subscribe-form {
   background-color: rgb(212, 213, 214, 0.9);
+}
+
+.update-link, .remove-item{
+  cursor: pointer;
 }
 
 @media (max-width: 1249px) {
