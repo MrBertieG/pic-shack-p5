@@ -34,7 +34,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Pic Shack {% block extra_title %} {% endblock %}</title>
+    <title>PicShack {% block extra_title %} {% endblock %}</title>
   </head>
 
   <body>
@@ -59,9 +59,9 @@
             <div class="col-xl-3 my-auto">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                        <input class="form-control border border-black rounded-left" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn btn-black border border-black rounded-right" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -118,7 +118,7 @@
             </div>
         </div>
         <!--L, M, S Screen Size Header-->
-        <div class="row d-xl-none" id="main-header">
+        <div class="row d-xl-none justify-content-center" id="main-header">
             <div class="pic-logo d-none d-sm-block">
                 <a href="{% url 'home' %}">
                     <img src="/media/logo/picshack-logo.001.jpeg" id="pic-logo" alt="picture shack logo picture" class="img-fluid">
@@ -173,15 +173,15 @@
     {% block footer %}
     <footer>
         <br>
-        <div id="info-banner" class="row">
+        <div id="color-banner" class="row">
             <div class="col text-dark d-flex justify-content-center">
-                <p class="p-5 p-size">Fast Delivery <i class="fa-solid fa-truck"></i></p>
-                <p class="p-5 p-size">Free Shipping Over £50 <i class="fa-solid fa-box"></i></p>
-                <p class="p-5 p-size">PicShack and Sustainability <i class="fa-solid fa-seedling"></i></p>
-                <p class="p-5 p-size">Secure Paymenet <i class="fa-brands fa-cc-stripe"></i></p>
+                <p class="p-5 p-size text-center">Fast Delivery <i class="fa-solid fa-truck"></i></p>
+                <p class="p-5 p-size text-center">Free Shipping Over £50 <i class="fa-solid fa-box"></i></p>
+                <p class="p-5 p-size text-center">PicShack and Sustainability <i class="fa-solid fa-seedling"></i></p>
+                <p class="p-5 p-size text-center">Secure Payment <i class="fa-brands fa-cc-stripe"></i></p>
             </div>
         </div>
-        <div class="row" id="info-banner" >
+        <div class="row" id="color-banner" >
             <div class="col border-top border-right border-light d-flex justify-content-center">
                 <div class="col-md-6 mt-md-0 mb-3">
                     <h5 class="text-dark  mt-3">Newsletter</h5>
