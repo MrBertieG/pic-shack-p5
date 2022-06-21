@@ -52,7 +52,7 @@
                     <br>
                     {% if request.user.is_authenticated %}
                         <!-- Review Modal trigger button -->
-                        <button type="button" class="btn btn-sm main-btn ms-2 text-primary" data-toggle="modal" data-target="#reviewModal">
+                        <button type="button" class="btn btn-sm main-btn ms-2 pl-0 text-primary" data-toggle="modal" data-target="#reviewModal">
                             Leave a review  <i class="fa-solid fa-star-half-stroke"></i>
                         </button> 
 
@@ -61,21 +61,15 @@
                             <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="reviewModalLabel">Leave a review.</h5>
+                                    <h5 class="modal-title" id="reviewModalLabel">Leave a review!</h5>
                                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><strong>X</strong></button>
                                 </div>
                                     <div class="modal-body">
                                         <form class="" action="{% url 'review_product' product.id %}" method="POST">
                                             {{ form | crispy }}
                                             {% csrf_token %}
-                                              <input type="submit" class="form-control" id="exampleFormControlInput1" placeholder="Leave review">
+                                            <input type="submit" class="form-control btn btn-success" id="exampleFormControlInput1" value="Leave review">
                                         </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="btn d-inline-block btn-danger">
-                                            <a class="text-decoration-none delete-anchor text-white" href="{% url 'review_product' product.id %}">Leave review<i class="fa-solid fa-check"></i></a>
-                                        </div>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -169,14 +163,24 @@
                 </div>
             </div>
         </div>
+        <h3>Reviews<span><i class="fa-solid fa-star-half-stroke"></i></span></h3>
         <div class="row">
             {% for reviews in review %}
-                <p>{{ reviews.text }}</p>
-                <p>{{ reviews.user }}</p>
+                <div class="col-lg-6 mt-1 bg-warning align-items-center"">
+                    <p>{{ reviews.text }}</p>
+                </div>
+                <div class="col-lg-2 mt-1  bg-warning">
+                    <p>{{ reviews.user }} | {{ reviews.created_on }}</p>
+                </div>
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                    <a class="text-decoration-none text-danger d-flex align-items-center p-1" href="{% url 'delete_review' reviews.id %}"><i class="fa-solid fa-trash-can"></i></a>
+                    {% endif %}
+                {% endif %}
             {% endfor %}
         </div>
     </div>
-    <div id="color-banner" class="row">
+    <div id="color-banner" class="row mt-5">
         <div class="col text-dark d-flex justify-content-center">
             <p class="m-0 text-p">Quality Paper <i class="fa-solid fa-scroll"></i></p>
             <p class="m-0 text-p">Made in UK <i class="fa-solid fa-flag"></i></p>
