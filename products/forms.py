@@ -25,7 +25,4 @@ class ReviewForm(forms.ModelForm):
     
     class Meta:
         model = Review
-        fields = ('review', 'rate',)
-        widgets = {
-            'review': forms.Textarea(attrs={'cols': 40, 'rows': 3}),
-        }
+        fields = ('text', )

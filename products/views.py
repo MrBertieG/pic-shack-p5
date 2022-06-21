@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -64,11 +65,13 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    review = Review.objects.filter(pk=product_id)
+    form = ReviewForm()
+    review = Review.objects.order_by('created_on')
 
     context = {
         'product': product,
-        'reviews': review,
+        'form': form,
+        'review': review,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -143,23 +146,24 @@ def delete_product(request, product_id):
 
 
 @login_required
-def review_product(request, product_id):
+def review_product(request, product_id, *args):
     """A view to allow a user to leave a review on a product they purchased"""
-    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        product = get_object_or_404(Product, pk=product_id)
+        review_form = ReviewForm(data=request.POST)
 
-    if request.method == "POST":
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            form.save(commit=False)
+        if review_form.is_valid():
+            product = get_object_or_404(Product, pk=product_id)
+            review_form.instance.user = request.user
+            review = review_form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
             messages.success(request, 'Successfully added review!')
-
-        else:
-            form = ReviewForm()
+            return HttpResponseRedirect(reverse('product_detail', args=[product_id]))
         
-            template = 'products/product_detail.html'
-            context = {
-                'form': form,
-            }
+    else:
+        review_form = ReviewForm()
+        messages.error(request, "Error in the form, cannot post review!")
 
-            return render(request, template, context)
-
+    return redirect(reverse('product_detail', args=[product_id]))

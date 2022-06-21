@@ -51,10 +51,11 @@
                     {% endif %}
                     <br>
                     {% if request.user.is_authenticated %}
-                        <!-- Modal trigger button -->
+                        <!-- Review Modal trigger button -->
                         <button type="button" class="btn btn-sm main-btn ms-2 text-primary" data-toggle="modal" data-target="#reviewModal">
                             Leave a review  <i class="fa-solid fa-star-half-stroke"></i>
                         </button> 
+
                         <!-- Modal for activating the review form-->
                         <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -63,28 +64,13 @@
                                     <h5 class="modal-title" id="reviewModalLabel">Leave a review.</h5>
                                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><strong>X</strong></button>
                                 </div>
-
-
-
-
                                     <div class="modal-body">
-                                        <form class="" action="{% url 'product_detail' product.id %}" method="POST">
+                                        <form class="" action="{% url 'review_product' product.id %}" method="POST">
+                                            {{ form | crispy }}
                                             {% csrf_token %}
-                                            {% for product in products %}
-                                            <input type="hidden" name="product_id" value="{{product.id}}">
-                                            {% endfor %}
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Review title...">
-                                              </div>
-                                              <div class="form-group">
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Leave review here..."></textarea>
-                                              </div>
+                                              <input type="submit" class="form-control" id="exampleFormControlInput1" placeholder="Leave review">
                                         </form>
                                     </div>
-
-
-
-
                                     <div class="modal-footer">
                                         <div class="btn d-inline-block btn-danger">
                                             <a class="text-decoration-none delete-anchor text-white" href="{% url 'review_product' product.id %}">Leave review<i class="fa-solid fa-check"></i></a>
@@ -184,10 +170,9 @@
             </div>
         </div>
         <div class="row">
-            {% for review in reviews %}
-            <p>{{review.user.username}}</p>
-            <p>{{review.created_on}}</p>
-            <p>{{review.comment}}</p>
+            {% for reviews in review %}
+                <p>{{ reviews.text }}</p>
+                <p>{{ reviews.user }}</p>
             {% endfor %}
         </div>
     </div>
@@ -202,8 +187,9 @@
         <div class="col text-dark d-flex justify-content-left m-5 w-80">
         <p>Picshack loves trends and that’s why we always ensure we offer you the newest of the new in posters and prints. 
             We are continuously expanding our range and we regularly add new designs by talented designers, photographers and illustrators.</p>
-            </div>
+        </div>
     </div>
+
 
 {% endblock %}
 

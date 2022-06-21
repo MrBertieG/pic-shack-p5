@@ -15,8 +15,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                <h2 class="logo-font mb-4">Product Management</h2>
-                <h5 class="text-muted">Add a Product</h5>
+                <h5 class="text-muted">Leave a review!</h5>
                 <hr>
             </div>
         </div>
@@ -25,7 +24,7 @@
             <div class="col-12 col-md-6">
                 <form class="" action="{% url 'review_product' %}" method="POST">
                     {% csrf_token %}
-                    {% for product in products %}
+                    {{form}}
                     <input type="hidden" name="product_id" value="{{product.id}}">
                     {% endfor %}
                     <div class="form-group">

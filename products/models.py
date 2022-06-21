@@ -43,9 +43,8 @@ RATE_CHOICES = [
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="user_reviews")
-    product = models.ForeignKey(Product, models.CASCADE)
-    review = models.TextField(max_length=250)
-    rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    text = models.TextField(max_length=250)
     created_on = models.DateField(auto_now_add=True)
 
 
@@ -54,4 +53,4 @@ class Review(models.Model):
         ordering = ["-created_on"]
     
     def __str__(self):
-        return self.user.username
+        return str(self.id)
