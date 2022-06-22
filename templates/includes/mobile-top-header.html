@@ -1,7 +1,7 @@
 <li class="list-inline-item ">
     <a class="text-white nav-link d-block d-lg" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
-            <div><i class="fas fa-search fa-lg"></i></div>
+            <div><i class="fas fa-search fa-lg text-white"></i></div>
             <p class="my-0">Search</p>
         </div>
     </a>
@@ -27,6 +27,8 @@
             <p class="my-0">
                 {% if request.user.is_authenticated %}
                 {{ request.user.username }}
+                {% else %}
+                Sign In
                 {% endif %}
             </p>
         </div>
@@ -45,10 +47,10 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg" href="{% url 'view_bag' %}">
+    <a class="{% if grand_total %}text-success font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg" href="{% url 'view_bag' %}">
         <div class="text-center">
             <div><i class="fa-solid fa-bag-shopping fa-lg"></i></div>
-            <p class="my-0">
+            <p class="my-0 text-light">
                 {% if grand_total %}
                     £{{ grand_total|floatformat:2 }}
                 {% else %}

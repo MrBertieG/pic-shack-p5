@@ -179,12 +179,3 @@ def delete_review(request, review_id):
         return redirect(reverse('products'))
     else:
         messages.error(request, 'You don\'t have permissions to delete this post')
-
-
-# @login_required
-# def delete_review(request, review_id, product_id):
-#     """View to allow users to delete a review"""
-#     current_user = request.user
-#     review = Review.objects.filter(pk=review_id, user_id=current_user.id).delete()
-#     messages.success(request, "Review deleted")
-#     return redirect(reverse('product_detail', args=[product_id]))

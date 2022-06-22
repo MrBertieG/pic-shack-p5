@@ -12,16 +12,17 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <a href="{% url 'products' %}" class="btn mt-md-5 pt-md-5">
+            <a href="{% url 'products' %}" class="btn mt-5">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
                 <span>Keep Shopping</span>
             </a>
         </div>
+
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
+                <div class="image-container m-5 m-md-0 m-lg-0">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" id="img-border" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -33,6 +34,7 @@
                     {% endif %}
                 </div>
             </div>
+
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
@@ -163,30 +165,32 @@
                 </div>
             </div>
         </div>
+
+        <!--Review Section-->
         <h3>Reviews<span><i class="fa-solid fa-star-half-stroke"></i></span></h3>
         <div class="row">
             {% for reviews in review %}
-                <div class="col-lg-6 mt-1 bg-warning align-items-center"">
+                <div class="col-6 col-lg-6 mt-1 bg-warning align-items-center"">
                     <p>{{ reviews.text }}</p>
                 </div>
-                <div class="col-lg-2 mt-1  bg-warning">
+                <div class="col-6 col-lg-2 mt-1  bg-warning">
                     <p>{{ reviews.user }} | {{ reviews.created_on }}</p>
-                </div>
-                {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                    <a class="text-decoration-none text-danger d-flex align-items-center p-1" href="{% url 'delete_review' reviews.id %}"><i class="fa-solid fa-trash-can"></i></a>
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <a class="text-decoration-none text-danger d-flex align-items-center p-1" href="{% url 'delete_review' reviews.id %}"><i class="fa-solid fa-trash-can"></i></a>
+                        {% endif %}
                     {% endif %}
-                {% endif %}
+                </div>
             {% endfor %}
         </div>
     </div>
-    <div id="color-banner" class="row mt-5">
-        <div class="col text-dark d-flex justify-content-center">
-            <p class="m-0 text-p">Quality Paper <i class="fa-solid fa-scroll"></i></p>
-            <p class="m-0 text-p">Made in UK <i class="fa-solid fa-flag"></i></p>
-            <p class="m-0 text-p">100% Recycled Materials <i class="fa-solid fa-recycle"></i></p>
-        </div>
+    <div class="color-banner row mt-5 text-dark d-flex justify-content-center text-center">
+        <div class="col-6 col-md-6 col-lg-3 p-3">Quality Paper <i class="fa-solid fa-scroll"></i></div>
+        <div class="col-6 col-md-6 col-lg-3 p-3">Made in UK <i class="fa-solid fa-flag"></i></div>
+        <div class="col-6 col-md-6 col-lg-3 p-3">100% Recycled Materials <i class="fa-solid fa-recycle"></i></div>
+        <div class="col-6 col-md-6 col-lg-3 p-3">Free returns <i class="fa-solid fa-arrow-rotate-left"></i></div>
     </div>
+
     <div class="row">
         <div class="col text-dark d-flex justify-content-left m-5 w-80">
         <p>Picshack loves trends and that’s why we always ensure we offer you the newest of the new in posters and prints. 
