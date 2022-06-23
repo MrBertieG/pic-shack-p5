@@ -147,7 +147,7 @@ strong {
 
 .image-container {
   object-fit: contain;
-  border: 5px solid #0d151e;
+  border: 2px solid #0d151e;
 }
 
 .increment-qty, .decrement-qty {
