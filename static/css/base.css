@@ -8,6 +8,24 @@ body {
   font-family: Comfortaa, Arial, Helvetica, sans-serif;
 }
 
+/* -----------------------------------Blurred Picture */
+.bg-image {
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(20px);
+  opacity: 0.5;
+  position: absolute;
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* -----------------------------------Blurred Picture End*/
+
 /*-------------------------------------Main-Nav */
 #main-header {
     background-color: black;
@@ -72,6 +90,10 @@ strong {
   font-weight: bold;
 }
 
+.car-size {
+  width: 25%!important;
+}
+
 /*-----------------------------------------------Media queries */
 @media (max-width: 1249px) {
   .p-nav {
@@ -96,12 +118,14 @@ strong {
   .fa-search {
     color: black;
   }
-  
-  }
+}
 
 @media (max-width:733px) {
   .btn-clearance-sx-screen {
     transform: translate3d(-94px, 21px, 0px)!important;
+  }
+  .car-size {
+    width: 50%!important;
   }
 }
 
