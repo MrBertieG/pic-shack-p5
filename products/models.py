@@ -43,7 +43,8 @@ RATE_CHOICES = [
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name="user_reviews")
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name="product_reviews", 
+                                on_delete=models.CASCADE)
     text = models.TextField(max_length=250)
     created_on = models.DateField(auto_now_add=True)
 

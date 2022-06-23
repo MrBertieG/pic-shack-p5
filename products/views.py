@@ -66,7 +66,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     form = ReviewForm()
-    review = Review.objects.order_by('created_on')
+    review = product.product_reviews.order_by('created_on')
 
     context = {
         'product': product,

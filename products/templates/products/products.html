@@ -47,7 +47,6 @@
                 </div>
                 <div class="row">
                     {% for product in products %}
-                    {% if forloop.counter <= 6 %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                               <div class="image-container">
@@ -135,8 +134,7 @@
                             <div class="col-12 d-none d-xl-block mb-5">
                                 <hr>
                             </div>
-                        {% endif %}
-                    {% endif %}    
+                        {% endif %}   
                     {% endfor %}
                 </div>
             </div>

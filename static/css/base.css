@@ -241,46 +241,72 @@ color: #17a2b8; /* text-info */
 
 /*Codepen Carousel */
 
-.carousel {
-  position: relative;
-}
-.carousel-item img {
-  object-fit: cover;
-}
-#carousel-thumbs {
-  background: rgba(255,255,255,.3);
-  bottom: 0;
-  left: 0;
-  padding: 0 50px;
-  right: 0;
-}
-#carousel-thumbs img {
-  border: 5px solid transparent;
-  cursor: pointer;
-}
-#carousel-thumbs img:hover {
-  border-color: rgba(255,255,255,.3);
-}
-#carousel-thumbs .selected img {
-  border-color: #fff;
-}
-.carousel-control-prev,
-.carousel-control-next {
-  width: 50px;
-}
-@media all and (max-width: 767px) {
-  .carousel-container #carousel-thumbs img {
-    border-width: 3px;
-  }
-}
-@media all and (min-width: 576px) {
-  .carousel-container #carousel-thumbs {
-    position: absolute;
-  }
-}
-@media all and (max-width: 576px) {
-  .carousel-container #carousel-thumbs {
-    background: #ccccce;
-  }
+$carousel-height: 250px;
+$control-size: 50px;
+
+body {
+  background: #3e3e3e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+.carousel {
+  width: 80vw;
+  height: $carousel-height;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  
+  &:hover .controls {
+    opacity: 1;
+  }
+  
+  .controls {
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 99999;
+    transition: all ease 0.5s;
+    
+    .control {
+      margin: 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.7);
+      opacity: .5;
+      transition: ease .3s;
+      cursor: pointer;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  
+    .slides {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: flex;
+      width: 100%;
+      transition: 1s ease-in-out all;
+      
+      .slide {
+        min-width: 100%;
+        min-height: $carousel-height;
+        height: auto;
+      }
+    }
+}
