@@ -44,7 +44,8 @@ def unsub_newsletter(request):
                 messages.success(request, 'You are no longer a subscriber.')
                 return redirect(reverse('home'))
             else:
-                messages.error(request, 'This email is not part of our mailing list, please check again.')
+                messages.error(request, 'This email is not part of our mailing \
+                    list, please check again.')
 
     context = {
         'form': form,
