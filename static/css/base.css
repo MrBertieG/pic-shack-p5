@@ -10,9 +10,6 @@ body {
 
 /* -----------------------------------Blurred Picture */
 .bg-image {
-  /* Add the blur effect */
-  filter: blur(8px);
-  -webkit-filter: blur(20px);
   opacity: 0.5;
   position: absolute;
   
@@ -23,6 +20,24 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.image-fit {
+  float: left;
+  width: 40%;
+  margin: 0 30px 20px 0;
+  
+  &:nth-child(2n) {
+    clear: left;
+  }
+  
+  &:nth-child(2n+1){
+    margin-right: 0;
+  }
+}
+
+.object-fit_contain { 
+  object-fit: contain 
 }
 /* -----------------------------------Blurred Picture End*/
 

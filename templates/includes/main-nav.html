@@ -3,7 +3,7 @@
     <ul class="list-inline list-unstyled text-center d-flex justify-content-between w-auto mx-auto">
         <li class="nav-item dropdown my-auto a-nav pl-3">
             <a class="text-white" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Prints
+               Filter
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a> 
@@ -15,7 +15,7 @@
 
         <li class="nav-item dropdown my-auto a-nav">
             <a class="text-white" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Best Sellers
+                All Prints
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
                 <a href="{% url 'products' %}?category=animated" class="dropdown-item">Animated</a>
