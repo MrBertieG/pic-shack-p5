@@ -160,17 +160,6 @@
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    <script type="text/javascript">
-        $('.toast').toast('show');
-        setTimeout(function () {
-            let messages = document.getElementById('msg');
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 4000);
-    </script>
-    {% endblock %}
-
     {% block footer %}
     <footer>
         <br>
@@ -212,5 +201,17 @@
         </div>
     </footer>
     {% endblock %}
-</body>
+
+    {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 4000);
+    </script>
+    {% endblock %}
+
+    </body>
 </html>
