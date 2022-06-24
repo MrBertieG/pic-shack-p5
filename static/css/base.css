@@ -8,22 +8,6 @@ body {
   font-family: Comfortaa, Arial, Helvetica, sans-serif;
 }
 
-/* -----------------------------------Blurred Picture */
-.bg-image {
-  /* Add the blur effect */
-  opacity: 0.5;
-  position: absolute;
-  
-  /* Full height */
-  height: 100%; 
-  
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-/* -----------------------------------Blurred Picture End*/
-
 /*-------------------------------------Main-Nav */
 #main-header {
     background-color: black;
@@ -37,6 +21,10 @@ body {
 
 .fa-search {
   color:#fff;
+}
+
+.carousel-container {
+  background-color: antiquewhite;
 }
 
 .overlay {
