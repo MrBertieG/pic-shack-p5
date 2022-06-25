@@ -38,7 +38,7 @@
                                 {% if item.product.image %}
                                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                                 {% else %}
-                                    <img class="w-100" src="https://p5-pic-shack.s3.eu-west-2.amazonaws.com/media/not_available.jpg" alt="{{ product.name }}">
+                                    <img class="w-100" src="{{ MEDIA_URL }}media/not_available.jpg" alt="{{ product.name }}">
                                 {% endif %}
                             </a>
                         </div>
