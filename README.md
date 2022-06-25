@@ -545,12 +545,10 @@ Error 404 and Server 500 error custom page:
 [Top of the page](#top)
 ## <a name="future">7. Potential Features</a>
 
-- fixed top bar
-- reviews available only to purchased items
-- star rating system and filtering model for reviews
-- carousel changing orientation in screen sizes
-- more advanced filtering options for searching
-- more features for superusers
+Due to time constraints I haven't been able to impelement some of the changes I had planned.<br>
+![future features](media/future_features.png)
+<br><br>
+
 
 [Top of the page](#top)
 ## <a name="deployment">8. Deployment</a>
@@ -704,11 +702,30 @@ Now media is located in AWS S3 folder.
 ## <a name="bugs">7. Bugs</a>
 
 ### Known Fixed Bugs
-Insert Text
+Problem:<br>
+When deleting products from the Products page, other products were getting deleted rather than the selected product.
+
+Solution:<br>
+Due to time constraints I have deleted this feature and kept the Delete functionality from the Product Detail Page.
+
+Problem:<be>
+Email confirmations were not going out.
+
+Solution:<br>
+Webhook endpoint in Stripe was missing '/'.
+
+Problem:<br>
+Error 500 when purchase was made. This was because the field in the Order model named size was only 2 characters long. I have changed it to 10 and made migrations.
+
+Other bugs included: 
+	- Reviews were displaying on all products.
+	- Carousel was scalling in and out when transitioning.
+	- New arrivals was not displaying the latest uploaded products.
+	- Superuser couldn't delete users reviews.
 
 <br><br>
 ### Existing Bugs
-Insert Text
+
 
 <br><br>
 
