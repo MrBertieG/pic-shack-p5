@@ -122,6 +122,9 @@ Contact Us Page Desktop:<br>
 
 
 ### [4. Testing](#manual-testing)
+- HTML Validator
+- CSS Validator
+- JavaScript
 - PEP8 Validator
 - Manual Testing
 ### [5. Technologies Used](#tech-used)
@@ -308,17 +311,40 @@ Insert Text
 [Top of the page](#top)
 ## <a name="testing">4. Testing</a>
 
-### PEP8 Validator
+### HTML Validator
+I a have used [validator.w3.ord](https://validator.w3.org/)to test all HTML documents. Because of using Django to build the application,
+the same errors appeard on all html pages due to the Django sysntax. I have decided to ignore those and look any HTML syntax errors which there are none.<br>
+![html errors](media/manual_testing/django_reoccurring_error_html.png)
+<br>
 
-Insert Text
+![manual HTML testing](media/manual_testing/html_validator.png)
 
 ### CSS Validator
 
-Insert Text
+I have used [jigsaw.w3.org](https://jigsaw.w3.org/css-validator/) for the CSS testing. There are a few warnings related to colours and webkit extensions but no errors.<br>
+![css warnings](media/manual_testing/css_warnings.png)
+<br>
 
-### HTML Validator
+![manual CSS testing](media/manual_testing/css.validator.png)
+<br><br>
 
-Insert Text
+### Python Validator
+
+I have used two methods to check for Python errors. I have quickly ran the command python3 -m pep8 which displayed any warnings or errors in all of the files.
+And I have also used[pep8 online](http://pep8online.com/) to easilly identyfy the errors. 
+
+The only document I haven't modified is the settings.py file. Due to the importance I have decided ignore this document.<br>
+![pep8 manual testing](media/manual_testing/pep8_validator.png)
+<br><br>
+
+### JavaScript
+
+I have used [jshint.com](https://jshint.com/) to validate my JavaScript code. There have been some warnings but no errors and since the code was written by Code Institute I have decided to ignore those.<br>
+![js warnings](media/manual_testing/js_validator_warnings.png)
+<br><br>
+
+![js manual testing](media/manual_testing/js_validator.png)
+
 <br><br>
 
 [Top of the page](#top)
