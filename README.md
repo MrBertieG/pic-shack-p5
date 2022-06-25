@@ -351,7 +351,36 @@ I have used [jshint.com](https://jshint.com/) to validate my JavaScript code. Th
 ### Manual Testing
 I have been using [AmIResponsive](http://ami.responsivedesign.is) to check the responsivness of the website.
 
-Insert Text
+I have exrensivley tested all of the pages, links and functionality and recorded the outcome below.
+<br>
+
+Home Page:<br>
+![home page](media/manual_testing/home_page_testing.png)<br>
+<br><br>
+
+Navigation Bar:<br>
+![navigation bar](media/manual_testing/navbar_links_testing.png)
+<br><br>
+
+Product Page:<br>
+![products page](media/manual_testing/product_page_testing.png)
+<br><br>
+
+Product Detail Page:<br>
+![product detail](media/manual_testing/product_detail_testing.png)
+<br><br>
+
+Superuser Product Management:<br>
+![product management](media/manual_testing/product_management_test.png)
+<br><br>
+
+Checkout Process:<br>
+![checkout process](media/manual_testing/checkout_page_test.png)
+<br><br>
+
+Contact Us Form:<br>
+![contact us](media/manual_testing/contact_us_test.png)
+<br><br>
 
 <br><br>
 
