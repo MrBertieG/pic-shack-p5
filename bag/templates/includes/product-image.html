@@ -3,5 +3,5 @@
     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
 </div>
     {% else %}
-    <img class="img-fluid rounded" src="{{ MEDIA_URL }}not_available.jpg" alt="{{ item.product.name }}">
+    <img class="img-fluid rounded" src="https://p5-pic-shack.s3.eu-west-2.amazonaws.com/media/not_available.jpg" alt="{{ item.product.name }}">
 {% endif %}
