@@ -8,11 +8,11 @@ Live website [here](https://p5-pic-shack.herokuapp.com/).
 
 # Introduction
 
-Welcome to my final Code Institute Project 5. This a full e-commerce application website with the purpose of selling pictures. 
+Welcome to my final Code Institute Project 5. This a full e-commerce application website with the purpose of selling art such as prints. 
 
-It allows users to navigate freely, view products and make purchases without the need to create an account. The website incorporates full CRUD functionality. Another main feature of the website is the ability to have a superuser managing the content of the website and removing other user's content if need be. This also incoporates full CRUD functionlity.
+The website allows users to navigate freely, view products and make purchases without the need to create an account. The website incorporates full CRUD functionality. Another main feature of the website is the ability to have a superuser managing the content of the website and removing other users content if need be. This also incoporates full CRUD functionlity.
 
-Thye prodject has been developed using Django 3.2 framework.
+The prodject has been developed using Django 3.2 framework.
 
 
 ## <a name="top">Table of Contents</a>
@@ -44,42 +44,26 @@ Thye prodject has been developed using Django 3.2 framework.
 
 ### [6. SEO](#seo)
 
-### [0. Social Media & Marketing](#socialmedia)
+### [7. Social Media & Marketing](#socialmedia)
 - Business Model
 - Social Media
 - Marketing
 
-### [0. Features & End Product](#features)
+### [8. Features & End Product](#features)
 - Landing Page:
 - Custom 404 Not Found Page
 - Custom 500 Server Error
 
-### [0. Potential Features](#future)
+### [9. Potential Features](#future)
 
-### [6. Deployment](#deployment)
+### [10. Deployment](#deployment)
 
-### [7. Bugs](#bugs)
+### [11. Bugs](#bugs)
 - Known Fixed Bugs
 - Existing Bugs
-### [8. Credits](#credits)
+### [12. Credits](#credits)
 
 <br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 [Top of the page](#top)
 # <a name="user-ex">1. User Experience</a>
@@ -90,16 +74,13 @@ For the first time I wanted to develop an application that is out of my confort 
 
 I have visitited a varity of art selling websites and made some notes on the layout and design of the page. I have noticed they were fitting nicely with Boutique Ado's framework and decided to merge the two together.
 
-The goeal is to develop a site that is clear and easy to navigate without clutter or unecessary features.
+The goal is to develop a site that is clear and easy to navigate without clutter or unecessary features.
 
 <br><br>
 
 ## User Expectation
-
-<br>
-
 - ### A first time visitor:
-	- Understand imediatly the purpose of the website.
+	- Understand immediately the purpose of the website.
 	- Easily navigate and see a sample of the products on the landing page.
 	- Identify any deals.
 	- Search for products in the search bar.
@@ -119,8 +100,8 @@ The goeal is to develop a site that is clear and easy to navigate without clutte
 - ### A returning user:
 	- Create an account.
 	- View the order history if applicable.
-	- Leave review on products.
-	- Delete review on products.
+	- Leave reviews on products.
+	- Delete reviews on products.
 	- Update personal details.
 	- Reset password.
 	- Signup to the newsletter.
@@ -128,7 +109,7 @@ The goeal is to develop a site that is clear and easy to navigate without clutte
 <br>
 
 - ### A frequent user:
-	- Visit the website's 'New PicShack Prints' for any new products.
+	- Visit the website's 'New PicShack Prints' section for any new products.
 
 <br>
 
@@ -159,7 +140,7 @@ I have chosen to stick with a simple black and white design for accesssability p
 # <a name="structure">2. Structure</a>
 The wireframe was created using Balsamiq. As you can see, as the project evolved, the design has also changed, however the wireframe was crucial in identifying which design approach the website will take.
 
-The purpose of the wireframe is to try and visualise what the application will look like in webpage and mobile format. This is for guidance only.
+The purpose of the wireframe is to try and visualise what the application will look like in desktop and mobile format. This is for guidance only.
 
 Landing Page Mobile:<br>
 ![mobile landing page](media/wireframe_img/mob_1.png)
@@ -238,32 +219,26 @@ Contact Us Page Desktop:<br>
 <br><br>
 
 ### Custom Models
-A custom Review model has been added to the Product App. This is for the handling of the user and admin reviews.
+A custom Review model has been added to the Product App. This is for the handling of the user and admin reviews.<br>
+
 ![review model](media/database_img/review_model.png)<br>
 ![review admin](media/database_img/reviews_admin.png)<br>
 
-A custom Newsletter Application has been added to handle new subscrptions.
+A custom Newsletter Application has been added to handle new subscrptions.<br>
+
 ![newsletter model](media/database_img/newsletter_model.png)<br>
 ![newsletter admin](media/database_img/newsletter_admin.png)<br>
 
-A custome Contact us model has been created to handle the users enquiries.
+A custome Contact us model has been created to handle the users enquiries.<br>
+
 ![contact us model](media/database_img/contact_us_model.png)<br>
 ![contact us admin](media/database_img/contact_us_admin.png)<br>
-
-
-<br>
-
-
-[Top of the page](#top)
-## Authentication
-
-## 404 Not Found
 
 
 [Top of the page](#top)
 ## <a name="agile">3. Agile Method</a>
 
-Project cards or Issue card have been used to keep track of progress and add new ideas, features and bugs. Link to the project [here](https://github.com/MrBertieG/pic-shack-p5/projects/1)<br>
+Project cards or Issue cards have been used to keep track of progress and add new ideas, features and bugs to fix. Link to the project [here](https://github.com/MrBertieG/pic-shack-p5/projects/1)<br>
 ![github project cards](media/project_management_img/projects_1.png)
 <br><br>
 
@@ -272,8 +247,8 @@ Project cards or Issue card have been used to keep track of progress and add new
 ## <a name="testing">4. Testing</a>
 
 ### HTML Validator
-I a have used [validator.w3.ord](https://validator.w3.org/)to test all HTML documents. Because of using Django to build the application,
-the same errors appeard on all html pages due to the Django sysntax. I have decided to ignore those and look any HTML syntax errors which there are none.<br>
+I a have used [validator.w3.ord](https://validator.w3.org/) to test all HTML documents. Because of using Django to build the application,
+the same errors appeard on all html pages due to the Django syntax. I have decided to ignore those and look for any HTML syntax errors which there are none.<br>
 ![html errors](media/manual_testing/django_reoccurring_error_html.png)
 <br>
 
@@ -291,9 +266,9 @@ I have used [jigsaw.w3.org](https://jigsaw.w3.org/css-validator/) for the CSS te
 ### Python Validator
 
 I have used two methods to check for Python errors. I have quickly ran the command python3 -m pep8 which displayed any warnings or errors in all of the files.
-And I have also used[pep8 online](http://pep8online.com/) to easilly identyfy the errors. 
+And I have also used [pep8 online](http://pep8online.com/) to easilly identyfy the errors. 
 
-The only document I haven't modified is the settings.py file. Due to the importance I have decided ignore this document.<br>
+The only document I haven't modified is the settings.py file. Due to the importance of this file I have decided ignore this document.<br>
 ![pep8 manual testing](media/manual_testing/pep8_validator.png)
 <br><br>
 
@@ -311,7 +286,7 @@ I have used [jshint.com](https://jshint.com/) to validate my JavaScript code. Th
 ### Manual Testing
 I have been using [AmIResponsive](http://ami.responsivedesign.is) to check the responsivness of the website.
 
-I have exrensivley tested all of the pages, links and functionality and recorded the outcome below.
+I have extensively tested all of the pages, links and functionality and recorded the outcome below.
 <br>
 
 Home Page:<br>
@@ -357,7 +332,7 @@ Contact Us Form:<br>
 - For the message allerts
 ### Boostrap 4
 - For the styling of the website
-### Django 3.8
+### Django 3.2
 - The base platform used to develop and bring all the dependencies together
 ### PostgreSQL
 - For the Database
@@ -388,7 +363,7 @@ Contact Us Form:<br>
 
 ## <a name="seo">7. Search Engine Optimasation</a>
 
-For the SEO optimasation I have used words such as art, prints,  newest prints, design trends, abstract design, real shots, animated, new prints arrivals.
+For the SEO optimaiztion I have used words such as art, prints,  newest prints, design trends, abstract design, real shots, animated, new prints arrivals.
 
 The website has also a sitemap generated with an [XML generator](https://www.xml-sitemaps.com/).
 I have also created a policy page using [PolicyMaker](https://policymaker.io/).
@@ -402,7 +377,7 @@ I have included this meta description in my base template. <br>
 
 ### Business Model
 
-The business model for PicShack.com is a B2c or Business-to-Consumer model, meanin that the website as a the business is selling products directly to consumers who are the end-users. 
+The business model for PicShack.com is a B2C or Business-to-Consumer model, meaning that the website as the business is selling products directly to consumers who are the end-users. 
 
 The main goal is for the consumers to buy the prints in the most efficient and quickest way at prices in line with market competitors.
 
@@ -416,13 +391,13 @@ I have created a Facebook page for PicShack.<br>
 
 ### Marketing
 
-For the marketing strategy I have chosen to create my own Newsletter Application. Through the subscription model I will be collecting users emails and roll out marketing emails. Thos will also allow the users to easilly unsubscibe should they wish to.
+For the marketing strategy I have chosen to create my own Newsletter Application. Throught the subscription model I will be collecting users emails and roll out marketing emails. The model will also allow the users to easilly unsubscibe should they wish to.
 
 I will also be making full use of the Facebook Page and continuously run campaigns to promote sales.
 
 
 [Top of the page](#top)
-## <a name="features">7. Features and End Product</a>
+## <a name="features">7. Features & End Product</a>
 
 ### Landing Page
 
@@ -456,9 +431,9 @@ Mobile Footer:<br>
 
 Desktop All Products:<br>
 ![all products](media/features_img/all_products_large_11.png)
-<br<br>
+<br><br>
 
-Mobile Desktop All Products:
+Mobile Desktop All Products:<br>
 ![all products](media/features_img/all_products_medium_12.png)
 <br><br>
 
@@ -512,12 +487,12 @@ Desktop Product Management:<br>
 ![add products](media/features_img/add_product_large_25.png)
 <br><br>
 
-Mobile Product Management:
+Mobile Product Management:<br>
 ![add products](media/features_img/add_product_small_26_1.png)
 ![add products](media/features_img/add_product_small_26_2.png)
 <br><br>
 
-Desktop Edit Product Management:
+Desktop Edit Product Management:<br>
 ![edit product](media/features_img/edit_product_large_27.png)
 <br><br>
 
@@ -529,7 +504,7 @@ Mobile Delete Product:<br>
 ![delete product](media/features_img/delete_product_small_29.png)
 <br><br>
 
-Desktop Add Review:
+Desktop Add Review:<br>
 ![add review](media/features_img/add_review_large_30.png)
 <br><br>
 
@@ -537,7 +512,7 @@ Mobile Add Review:<br>
 ![add review](media/features_img/add_review_small_31.png)
 <br><br>
 
-Error 404 and Server 500 error custom page:
+Error 404 and Server 500 error custom page:<br>
 ![error 404 and 500](media/features_img/error_404_500.png)
 <br><br>
 
@@ -640,8 +615,6 @@ Paste into Bucket Policy Editor:
 - install django-storages
 - update settings.py apps
 - settings.py:
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
@@ -681,7 +654,8 @@ Add Keys to config VArs <br>
 
 ### Gitpod
 
-Create file in root custom_storages.py
+Create file in root custom_storages.py<br>
+
 from django.conf import settings
 from storages.backends.s3boto3 import S3Boto3Storage
 
@@ -697,6 +671,31 @@ class MediaStorage(S3Boto3Storage):
 Now media is located in AWS S3 folder.
 <br><br>
 
+Your requirements.txt file should look like this:<br>
+
+asgiref==3.5.0
+boto3==1.22.9
+botocore==1.25.9
+dj-database-url==0.5.0
+Django==3.2
+django-allauth==0.41.0
+django-countries==7.2.1
+django-crispy-forms==1.14.0
+django-libs==2.0.3
+django-storages==1.12.3
+gunicorn==20.1.0
+jmespath==1.0.0
+oauthlib==3.2.0
+Pillow==9.1.0
+psycopg2-binary==2.9.3
+python3-openid==3.2.0
+pytz==2022.1
+requests-oauthlib==1.3.1
+s3transfer==0.5.2
+sqlparse==0.4.2
+stripe==2.75.0
+
+
 [Top of the page](#top)
 
 ## <a name="bugs">7. Bugs</a>
@@ -704,28 +703,30 @@ Now media is located in AWS S3 folder.
 ### Known Fixed Bugs
 Problem:<br>
 When deleting products from the Products page, other products were getting deleted rather than the selected product.
-
+<br><br>
 Solution:<br>
 Due to time constraints I have deleted this feature and kept the Delete functionality from the Product Detail Page.
-
+<br><br>
 Problem:<be>
 Email confirmations were not going out.
-
+<br><br>
 Solution:<br>
 Webhook endpoint in Stripe was missing '/'.
-
+<br><br>
 Problem:<br>
 Error 500 when purchase was made. This was because the field in the Order model named size was only 2 characters long. I have changed it to 10 and made migrations.
-
+<br><br>
 Other bugs included: 
-	- Reviews were displaying on all products.
-	- Carousel was scalling in and out when transitioning.
-	- New arrivals was not displaying the latest uploaded products.
-	- Superuser couldn't delete users reviews.
+
+- Reviews were displaying on all products.
+- Carousel was scalling in and out when transitioning.
+- New arrivals was not displaying the latest uploaded products.
+- Superuser couldn't delete users reviews.
 
 <br><br>
-### Existing Bugs
 
+### Existing Bugs
+The CSS files someitmes doesn't load on the first attempt. The browsers needs to be hard refreshed and the CSS document will kick in. 
 
 <br><br>
 
