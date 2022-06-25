@@ -1,7 +1,5 @@
-<div>
-    {% if item.product.image %}
+{% if item.product.image %}
     <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-</div>
-    {% else %}
+{% else %}
     <img class="img-fluid rounded" src="https://p5-pic-shack.s3.eu-west-2.amazonaws.com/media/not_available.jpg" alt="{{ item.product.name }}">
 {% endif %}
