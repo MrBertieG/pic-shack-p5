@@ -1,16 +1,19 @@
-# EVforum.com
+# PicShack.com
 
 Live website [here](https://p5-pic-shack.herokuapp.com/).
 <br>
 
-![am I responsive]()
+![am I responsive](media/manual_testing/responsive_devices.png)
 
 
 # Introduction
 
+Welcome to my final Code Institute Project 5. This a full e-commerce application website with the purpose of selling pictures. 
 
+It allows users to navigate freely, view products and make purchases without the need to create an account. The website incorporates full CRUD functionality. Another main feature of the website is the ability to have a superuser managing the content of the website and removing other user's content if need be. This also incoporates full CRUD functionlity.
 
-<br><br>
+Thye prodject has been developed using Django 3.2 framework.
+
 
 ## <a name="top">Table of Contents</a>
 
@@ -42,6 +45,82 @@ Live website [here](https://p5-pic-shack.herokuapp.com/).
 - Custom 404 Not Found Page
 
 ### [3. Wireframe](#wireframe)
+
+The purpose of the wireframe is to try and visualise what the application will look like in webpage and mobile format. This is for guidance only.
+
+Landing Page Mobile:<br>
+![mobile landing page](media/wireframe_img/mob_1.png)
+<br><br>
+
+Sign In Page Mobile:<br>
+![mobile sign in page](media/wireframe_img/mob_2.png)
+<br><br>
+
+Signup Page Mobile:<br>
+![mobile signup page](media/wireframe_img/mob_3.png)
+<br><br>
+
+Products Page Mobile:<br>
+![mobile all products page](media/wireframe_img/mob_4.png)
+<br><br>
+
+Product Detail Page Mobile:<br>
+![mobile product detail page](media/wireframe_img/mob_5.png)
+<br><br>
+
+Shopping Bag Page Mobile:<br>
+![mobile shopping bag page](media/wireframe_img/mob_6.png)
+<br><br>
+
+Checkout Page Mobile:<br>
+![mobile checkout page](media/wireframe_img/mob_7.png)
+<br><br>
+
+Order Confirmation Page Mobile:<br>
+![mobile payment page](media/wireframe_img/mob_8.png)
+<br><br>
+
+Contact Us Page Mobile:<br>
+![mobile confirmation page](media/wireframe_img/mob_9.png)
+<br><br>
+
+Landing Page Desktop:<br>
+![mobile contact us page](media/wireframe_img/web_1.png)
+<br><br>
+
+Sign In Page Desktop:<br>
+![webpage landing page](media/wireframe_img/web_2.png)
+<br><br>
+
+Signup  Page Desktop:<br>
+![webpage sign in page](media/wireframe_img/web_3.png)
+<br><br>
+
+Products Page Desktop:<br>
+![webpage signup page](media/wireframe_img/web_4.png)
+<br><br>
+
+Product Detail Page Desktop:<br>
+![webpage all products page](media/wireframe_img/web_5.png)
+<br><br>
+
+Shopping Bag Page Desktop:<br>
+![webpage product detail page](media/wireframe_img/web_6.png)
+<br><br>
+
+Checkout Page Desktop:<br>
+![webpage shopping bag page](media/wireframe_img/web_7.png)
+<br><br>
+
+Order Confirmation Page Desktop:<br>
+![webpage checkout page](media/wireframe_img/web_8.png)
+<br><br>
+
+Contact Us Page Desktop:<br>
+![webpage payment page](media/wireframe_img/web_9.png)
+
+
+
 ### [4. Testing](#manual-testing)
 - PEP8 Validator
 - Manual Testing
@@ -60,35 +139,72 @@ Live website [here](https://p5-pic-shack.herokuapp.com/).
 
 ## Design Approach 
 
-Insert Text
+For the first time I wanted to develop an application that is out of my confort zone, just so I can experience what's it like to work on a type of project theme where I might not necessarily have a personal connection or passion in it especially topics related to art. I wanted to be able to adapt and experience what would it be like to work with the customer's various requests.
+
+I have visitited a varity of art selling websites and made some notes on the layout and design of the page. I have noticed they were fitting nicely with Boutique Ado's framework and decided to merge the two together.
+
+The goeal is to develop a site that is clear and easy to navigate without clutter or unecessary features.
 
 <br><br>
 
 ## User Expectation
 
-Insert Text
-
 <br>
 
-- ### A new user:
-Insert Text
-
-<br>
+- ### A first time visitor:
+	- Understand imediatly the purpose of the website.
+	- Easily navigate and see a sample of the products on the landing page.
+	- Identify any deals.
+	- Search for products in the search bar.
+	- Easily click on a product for details.
+	- Select a size if applicable.
+	- Filter by category or price.
+	- Add a product to the basket.
+	- Change quantity or remove product all together.
+	- Add more products to qualify for free delivery.
+	- See and overview of the items in the basket.
+	- Securley checkout.
+	- Successfully make a purchase.
+	- Receive email confirmation of the purchase information.
+	- Signup to the newsletter for latest deals.
+<br><br>
 
 - ### A returning user:
-Insert Text
+	- Create an account.
+	- View the order history if applicable.
+	- Leave review on products.
+	- Delete review on products.
+	- Update personal details.
+	- Reset password.
+	- Signup to the newsletter.
 
 <br>
 
 - ### A frequent user:
-Insert Text
+	- Visit the website's 'New PicShack Prints' for any new products.
 
 <br>
 
 [Top of the page](#top)
 
 ## Color Design
-Insert Text
+I have chosen to stick with a simple black and white design for accesssability purposes but also with the purpose of adding colours where it could make a difference to make a purchase.
+<br> 
+
+![add to bag](media/features_img/green_buttons_1.png)
+
+<br>
+
+![got to secure checkout](media/features_img/green_buttons_2.png)
+
+<br>
+
+![secure checkout](media/features_img/green_buttons_3.png)
+
+<br>
+
+![complete order](media/features_img/green_buttons_4.png)
+
 
 
 <br><br>
