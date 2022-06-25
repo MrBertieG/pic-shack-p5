@@ -51,21 +51,6 @@ Thye prodject has been developed using Django 3.2 framework.
 
 ### [0. Features & End Product](#features)
 - Landing Page:
-	- Picture banner zoom effect
-	- Navigation Bar
-	- Category Cards:
-		- EV News
-		- Ask The Community
-		- For Sale
-		- Technical Area
-	- Recent Post View
-- Category Section:
-	- Adding a Post button
-	- View all Posts from that category
-- Footer
-- CRUD Functionality
-- Authentication
-- Input Validation
 - Custom 404 Not Found Page
 - Custom 500 Server Error
 
@@ -552,31 +537,166 @@ Mobile Add Review:<br>
 ![add review](media/features_img/add_review_small_31.png)
 <br><br>
 
+Error 404 and Server 500 error custom page:
+![error 404 and 500](media/features_img/error_404_500.png)
+<br><br>
+
 
 [Top of the page](#top)
-## <a name="deployment">7. Deployment</a>
+## <a name="future">7. Potential Features</a>
+
+- fixed top bar
+- reviews available only to purchased items
+- star rating system and filtering model for reviews
+- carousel changing orientation in screen sizes
+- more advanced filtering options for searching
+- more features for superusers
+
+[Top of the page](#top)
+## <a name="deployment">8. Deployment</a>
 
 ### First Deployment
 
 ### Gitpod:
-Insert Text
+- Create a new repository using the Code Institute template
+- Follow the guide provided by CI to install Django and it's dependencies
+- Create the new project 'pic-shack-p5'
+- install dj_database_url and psycopg2-binary
+- Link to Heroku via the Procfile
+- Create requirements file
 
 ### Heroku
-Insert Text
+- Log into Heroku and create a new app 'p5-pic-shack'
+- in the 'Resources' tab search for PostgreSQL and sellect the 'hobby' option.
+- In the 'Settings' tab enable Config Vars
+- Link the following:
+	- DATABASE_URL
+	- SECRET_KEY
+	- DISABLE_COLLECTSTATIC set to 1
 
-### Github
-Insert Text
+### Stripe
+- Setup an account
+- In the Developers tab find API Keys
+- Copy STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY
+- In the webhooks tab add endpoint URL from the website (don't forget the / at the end) 
+- Reveal WH Secret and add to Heroku
 
-### Heroku
-Insert Text
+### Gmail
+- Setup new account
+- Settings > All Settings > Accounts - import
+- Other Google Accounts Settings
+- Security > enable Two Step Verification
+- Security >App Passwords: 
+	- Select Mail
+	Select Device > Other > Type Django > Copy password
+- Add in Heroku config vars:
+	- EMAIL_HOST_PASS : paste password
+	- EMAIL_HOST_USER : new created email
+
+## AWS Hosting
+- Setup new account
+- Find AWS Management Console
+- Click All Services > Storage > S3 Bucket
+- Create New Bucket
+- Add bucket name
+- Navigate to Object Ownership > enable ACL > Bucket Owner - preffered
+- Set Block Public Access to public. Acknowledge warnings and continue.
+- Create Bucket
+- In the new Bucket window select Properties > Static web hosting > Edit > Enable > fill input boxes with suggested.
+- Permissions Tab > CORS textarea paste: 
+
+	[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+
+- Bucket Policy > Edit Bucket Policy > AWS Policy Generator
+- Type of Policy : S3 Bucket Policy Principal*
+- Go to ARN copy and paste key into Bucket Policy Page > Permissions > Add Statement > Generate Policy > Copy the policy >
+Paste into Bucket Policy Editor: 
+	- Edit "Resources" and add the name of the bucket + '/' > Save.
+	- Navigate to ACL > Edit - check Everyone > Save
+	- Navigate to IAM
+	- User Groups > Create Group - name: "manage-pic-shack-p5" > Create
+	- Naigate to Policies > Create Policy > Import Managed Policy - AmazonS3FullAccess > Copy ARN
+	- Paste ARN into : "Resource": "arn key , arn key + /* " > Add Tags > Next > Review > Create Policy
+
+	- User Group > Select the new group > Permissions > Attach Policies > Find the policy > Add Permissions
+	- Creating the users: 
+		- manage-pic-shack-p5 > Access Key > Programmatic Access > Next
+		- Add user to the group > Next Tags > Next:review > Create USer
+		- IMPORTANT: Download file and keep safe.
+
+### Gitpod Terminal
+- install boto3
+- install django-storages
+- update settings.py apps
+- settings.py:
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if 'USE_AWS' in os.environ:
+    # Cache Control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'p5-pic-shack'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+### Heroku Config Vars
+
+Add Keys to config VArs <br>
+![heroku](media/heroku_config.png)
 
 
-### Production Deployment
+### Gitpod
 
-### Github & Gitpod 
-Insert Text
-### Heroku
-Insert Text
+Create file in root custom_storages.py
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+
+
+Now media is located in AWS S3 folder.
 <br><br>
 
 [Top of the page](#top)
