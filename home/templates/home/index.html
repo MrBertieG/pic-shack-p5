@@ -12,12 +12,15 @@
       <h4 class="logo-font my-1 text-dark">Quality prints at a competitive price. Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
   </div>            
 </div>
-<div class="row d-flex justify-content-center mt-5 w-100 carousel-container">
-  <div id="carouselExampleIndicators" class="carousel slide car-size" data-ride="carousel">
+<!--Bootstrap Carousel-->
+<div class="container mt-5 carousel-container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -59,7 +62,7 @@
               <div class="image-container">
                 {% if product.image %}
                     <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top img-fluid" id="img-border" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <img class="card-img-top img-fluid img-border" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                     {% else %}
                     <a href="{% url 'product_detail' product.id %}">
