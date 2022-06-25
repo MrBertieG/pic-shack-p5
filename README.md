@@ -25,7 +25,31 @@ Thye prodject has been developed using Django 3.2 framework.
 	- Returning Users
 	- Frequent Users
 - Color Design
-### [2. Features](#features)
+
+### [2. Structure](#structure)
+- Wireframe
+- Database Structure
+- Custom Models
+
+### [3. Agile Method](#agile)
+- Github Projects
+
+### [4. Testing](#manual-testing)
+- HTML Validator
+- CSS Validator
+- JavaScript
+- PEP8 Validator
+- Manual Testing
+### [5. Technologies Used](#tech-used)
+
+### [6. SEO](#seo)
+
+### [0. Social Media & Marketing](#socialmedia)
+- Business Model
+- Social Media
+- Marketing
+
+### [0. Features & End Product](#features)
 - Landing Page:
 	- Picture banner zoom effect
 	- Navigation Bar
@@ -43,8 +67,112 @@ Thye prodject has been developed using Django 3.2 framework.
 - Authentication
 - Input Validation
 - Custom 404 Not Found Page
+- Custom 500 Server Error
 
-### [3. Wireframe](#wireframe)
+### [0. Potential Features](#future)
+
+### [6. Deployment](#deployment)
+
+### [7. Bugs](#bugs)
+- Known Fixed Bugs
+- Existing Bugs
+### [8. Credits](#credits)
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Top of the page](#top)
+# <a name="user-ex">1. User Experience</a>
+
+## Design Approach 
+
+For the first time I wanted to develop an application that is out of my confort zone, just so I can experience what's it like to work on a type of project theme where I might not necessarily have a personal connection or passion in it especially topics related to art. I wanted to be able to adapt and experience what would it be like to work with the customer's various requests.
+
+I have visitited a varity of art selling websites and made some notes on the layout and design of the page. I have noticed they were fitting nicely with Boutique Ado's framework and decided to merge the two together.
+
+The goeal is to develop a site that is clear and easy to navigate without clutter or unecessary features.
+
+<br><br>
+
+## User Expectation
+
+<br>
+
+- ### A first time visitor:
+	- Understand imediatly the purpose of the website.
+	- Easily navigate and see a sample of the products on the landing page.
+	- Identify any deals.
+	- Search for products in the search bar.
+	- Easily click on a product for details.
+	- Select a size if applicable.
+	- Filter by category or price.
+	- Add a product to the basket.
+	- Change quantity or remove product all together.
+	- Add more products to qualify for free delivery.
+	- See and overview of the items in the basket.
+	- Securley checkout.
+	- Successfully make a purchase.
+	- Receive email confirmation of the purchase information.
+	- Signup to the newsletter for latest deals.
+<br><br>
+
+- ### A returning user:
+	- Create an account.
+	- View the order history if applicable.
+	- Leave review on products.
+	- Delete review on products.
+	- Update personal details.
+	- Reset password.
+	- Signup to the newsletter.
+
+<br>
+
+- ### A frequent user:
+	- Visit the website's 'New PicShack Prints' for any new products.
+
+<br>
+
+[Top of the page](#top)
+
+## Color Design
+I have chosen to stick with a simple black and white design for accesssability purposes but also with the purpose of adding colours where it could make a difference to make a purchase.
+<br> 
+
+![add to bag](media/features_img/green_buttons_1.png)
+
+<br>
+
+![got to secure checkout](media/features_img/green_buttons_2.png)
+
+<br>
+
+![secure checkout](media/features_img/green_buttons_3.png)
+
+<br>
+
+![complete order](media/features_img/green_buttons_4.png)
+
+<br><br>
+
+[Top of the page](#top)
+
+# <a name="structure">2. Structure</a>
+The wireframe was created using Balsamiq. As you can see, as the project evolved, the design has also changed, however the wireframe was crucial in identifying which design approach the website will take.
 
 The purpose of the wireframe is to try and visualise what the application will look like in webpage and mobile format. This is for guidance only.
 
@@ -120,193 +248,40 @@ Contact Us Page Desktop:<br>
 ![webpage payment page](media/wireframe_img/web_9.png)
 
 
-
-### [4. Testing](#manual-testing)
-- HTML Validator
-- CSS Validator
-- JavaScript
-- PEP8 Validator
-- Manual Testing
-### [5. Technologies Used](#tech-used)
-### [6. Deployment](#deployment)
-### [7. Bugs](#bugs)
-- Known Fixed Bugs
-- Existing Bugs
-### [8. Credits](#credits)
-
+### Database Structure
+![database relation](media/database_img/model_relation.png)
 <br><br>
 
+### Custom Models
+A custom Review model has been added to the Product App. This is for the handling of the user and admin reviews.
+![review model](media/database_img/review_model.png)<br>
+![review admin](media/database_img/reviews_admin.png)<br>
 
-[Top of the page](#top)
-# <a name="user-ex">1. User Experience</a>
+A custom Newsletter Application has been added to handle new subscrptions.
+![newsletter model](media/database_img/newsletter_model.png)<br>
+![newsletter admin](media/database_img/newsletter_admin.png)<br>
 
-## Design Approach 
+A custome Contact us model has been created to handle the users enquiries.
+![contact us model](media/database_img/contact_us_model.png)<br>
+![contact us admin](media/database_img/contact_us_admin.png)<br>
 
-For the first time I wanted to develop an application that is out of my confort zone, just so I can experience what's it like to work on a type of project theme where I might not necessarily have a personal connection or passion in it especially topics related to art. I wanted to be able to adapt and experience what would it be like to work with the customer's various requests.
-
-I have visitited a varity of art selling websites and made some notes on the layout and design of the page. I have noticed they were fitting nicely with Boutique Ado's framework and decided to merge the two together.
-
-The goeal is to develop a site that is clear and easy to navigate without clutter or unecessary features.
-
-<br><br>
-
-## User Expectation
 
 <br>
 
-- ### A first time visitor:
-	- Understand imediatly the purpose of the website.
-	- Easily navigate and see a sample of the products on the landing page.
-	- Identify any deals.
-	- Search for products in the search bar.
-	- Easily click on a product for details.
-	- Select a size if applicable.
-	- Filter by category or price.
-	- Add a product to the basket.
-	- Change quantity or remove product all together.
-	- Add more products to qualify for free delivery.
-	- See and overview of the items in the basket.
-	- Securley checkout.
-	- Successfully make a purchase.
-	- Receive email confirmation of the purchase information.
-	- Signup to the newsletter for latest deals.
-<br><br>
-
-- ### A returning user:
-	- Create an account.
-	- View the order history if applicable.
-	- Leave review on products.
-	- Delete review on products.
-	- Update personal details.
-	- Reset password.
-	- Signup to the newsletter.
-
-<br>
-
-- ### A frequent user:
-	- Visit the website's 'New PicShack Prints' for any new products.
-
-<br>
-
-[Top of the page](#top)
-
-## Color Design
-I have chosen to stick with a simple black and white design for accesssability purposes but also with the purpose of adding colours where it could make a difference to make a purchase.
-<br> 
-
-![add to bag](media/features_img/green_buttons_1.png)
-
-<br>
-
-![got to secure checkout](media/features_img/green_buttons_2.png)
-
-<br>
-
-![secure checkout](media/features_img/green_buttons_3.png)
-
-<br>
-
-![complete order](media/features_img/green_buttons_4.png)
-
-
-
-<br><br>
-
-[Top of the page](#top)
-
-# <a name="features">2. Features</a>
-## Landing Page
-
-### Main Image Banner
-
-Insert Text
-
-### Navigation Bar
-Insert Text
-
-Large Screen
-Insert Text
-
-### Category Cards
-Insert Text
-
-Insert Text
-
-### Recent Posts
-Insert Text
-
-[Top of the page](#top)
-
-## Footer
-Insert Text
-
-<br>
-
-[Top of the page](#top)
-
-## CRUD Functionality
-
-A user can:
-
-Insert Text
-<br><br>
-
-Insert Text
-<br><br>
-
-Insert Text
-<br><br>
-
-Insert Text
-<br><br>
-
-Insert Text
-<br><br>
-
-Insert Text
-<br><br>
-
-Insert Text
-<br><br>
-
-Insert Text
-<br><br>
-
-Insert Text
 
 [Top of the page](#top)
 ## Authentication
 
-Insert Text
-
-Insert Text
-<br><br>
-
-Insert Text
-
-Insert Text
-<br><br>
-
 ## 404 Not Found
 
-Insert Text
 
 [Top of the page](#top)
-## <a name="wireframe">3. Wireframe</a>
-The wireframe was created using Balsamiq. As you can see, as the project evolved, the design has also changed, however the wireframe was crucial in identifying which design approach the website will take.
+## <a name="agile">3. Agile Method</a>
 
-Insert Text
-
-Insert Text
-
-
-### Database Wireframe
-
-Insert Text
-
-Project cards have been used to keep track of progress and add new ideas, features and bugs.<br>
-Insert Text
+Project cards or Issue card have been used to keep track of progress and add new ideas, features and bugs. Link to the project [here](https://github.com/MrBertieG/pic-shack-p5/projects/1)<br>
+![github project cards](media/project_management_img/projects_1.png)
 <br><br>
+
 
 [Top of the page](#top)
 ## <a name="testing">4. Testing</a>
@@ -394,7 +369,7 @@ Contact Us Form:<br>
 ### Python
 - For the backend app development
 ### Javascript
-- For the message allert timeout inspired by CI
+- For the message allerts
 ### Boostrap 4
 - For the styling of the website
 ### Django 3.8
@@ -426,7 +401,160 @@ Contact Us Form:<br>
 
 [Top of the page](#top)
 
-## <a name="deployment">6. Deployment</a>
+## <a name="seo">7. Search Engine Optimasation</a>
+
+For the SEO optimasation I have used words such as art, prints,  newest prints, design trends, abstract design, real shots, animated, new prints arrivals.
+
+The website has also a sitemap generated with an [XML generator](https://www.xml-sitemaps.com/).
+I have also created a policy page using [PolicyMaker](https://policymaker.io/).
+
+I have included this meta description in my base template. <br>
+![seo words](media/seo_words.png)
+
+[Top of the page](#top)
+
+## <a name="socialmedia">8. Social Media & Marketing</a>
+
+### Business Model
+
+The business model for PicShack.com is a B2c or Business-to-Consumer model, meanin that the website as a the business is selling products directly to consumers who are the end-users. 
+
+The main goal is for the consumers to buy the prints in the most efficient and quickest way at prices in line with market competitors.
+
+### Social Media
+
+I have created a Facebook page for PicShack.<br>
+![facebook page](media/facebook_img/facebook_1.png)
+<br><br>
+![facebook page](media/facebook_img/facebook_2.png)
+<br><br>
+
+### Marketing
+
+For the marketing strategy I have chosen to create my own Newsletter Application. Through the subscription model I will be collecting users emails and roll out marketing emails. Thos will also allow the users to easilly unsubscibe should they wish to.
+
+I will also be making full use of the Facebook Page and continuously run campaigns to promote sales.
+
+
+[Top of the page](#top)
+## <a name="features">7. Features and End Product</a>
+
+### Landing Page
+
+Desktop Carousel:<br>
+![carousel](media/features_img/index_carousel_1.png)
+<br><br>
+
+Desktop NavBar:<br>
+![navbar](media/features_img/navbar_large_2.png)
+<br><br>
+
+Mobile NavBar:<br>
+![navbar](media/features_img/navbar_small_4.png)
+<br><br>
+
+Desktop New Arrivals:<br>
+![new arrivals](media/features_img/new_arrivals_large_5.png)
+<br><br>
+
+Mobile New Arrivals:<br>
+![new arrivals](media/features_img/new_arrivals_small_7.png)
+<br><br>
+
+Desktop Footer:<br>
+![footer](media/features_img/footer_large_8.png)
+<br><br>
+
+Mobile Footer:<br>
+![footer](media/features_img/footer_small_10.png)
+<br><br>
+
+Desktop All Products:<br>
+![all products](media/features_img/all_products_large_11.png)
+<br<br>
+
+Mobile Desktop All Products:
+![all products](media/features_img/all_products_medium_12.png)
+<br><br>
+
+Desktop Product Detail:<br>
+![product detail](media/features_img/product_detail_large_13.png)
+<br><br>
+
+Mobile Product Detail:<br>
+![product detail](media/features_img/product_detail_small_14.png)
+![product detail](media/features_img/product_detail_small_15.png)
+<br><br>
+
+Desktop Toast Success:<br>
+![message success](media/features_img/toast_large_success_checkout_16.png)
+<br><br>
+
+Mobile Toast Success:<br>
+![message success](media/features_img/toast_small_success_checkout_17.png)
+<br><br>
+
+Desktop Shopping Bag:<br>
+![shopping bag](media/features_img/shopping_bag_large_18.png)
+<br><br>
+
+Mobile Shopping Bag:<br>
+![shopping bag](media/features_img/shopping_bag_small_19.png)
+<br><br>
+
+Desktop Checkout:<br>
+![checkout](media/features_img/checkout_large_20.png)
+<br><br>
+
+Mobile Checkout:<br>
+![checkout](media/features_img/checkout_small_21.png)
+<br><br>
+
+Desktop Confirmation Order:<br>
+![confirmation order](media/features_img/confirmation_large_22.png)
+<br><br>
+
+Mobile Confirmation Email:<br>
+![confirmation order](media/features_img/confirmation_small_23.png)
+<br><br>
+
+Confirmation Order Email:<br>
+![email confirmation](media/features_img/confirmation_email_24.png)
+<br><br>
+
+
+Desktop Product Management:<br>
+![add products](media/features_img/add_product_large_25.png)
+<br><br>
+
+Mobile Product Management:
+![add products](media/features_img/add_product_small_26_1.png)
+![add products](media/features_img/add_product_small_26_2.png)
+<br><br>
+
+Desktop Edit Product Management:
+![edit product](media/features_img/edit_product_large_27.png)
+<br><br>
+
+Desktop Delete Product:<br>
+![delete product](media/features_img/delete_product_large_28.png)
+<br><br>
+
+Mobile Delete Product:<br>
+![delete product](media/features_img/delete_product_small_29.png)
+<br><br>
+
+Desktop Add Review:
+![add review](media/features_img/add_review_large_30.png)
+<br><br>
+
+Mobile Add Review:<br>
+![add review](media/features_img/add_review_small_31.png)
+<br><br>
+
+
+[Top of the page](#top)
+## <a name="deployment">7. Deployment</a>
 
 ### First Deployment
 
