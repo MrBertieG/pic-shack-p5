@@ -1,3 +1,3 @@
 User-agent: *
-Disallow:
+Disallow:/accounts/
 Sitemap: https://https://p5-pic-shack.herokuapp.com/sitemap.xml
