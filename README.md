@@ -361,7 +361,7 @@ Contact Us Form:<br>
 
 [Top of the page](#top)
 
-## <a name="seo">7. Search Engine Optimasation</a>
+## <a name="seo">6. Search Engine Optimasation</a>
 
 For the SEO optimaiztion I have used words such as art, prints,  newest prints, design trends, abstract design, real shots, animated, new prints arrivals.
 
@@ -373,7 +373,7 @@ I have included this meta description in my base template. <br>
 
 [Top of the page](#top)
 
-## <a name="socialmedia">8. Social Media & Marketing</a>
+## <a name="socialmedia">7. Social Media & Marketing</a>
 
 ### Business Model
 
@@ -397,7 +397,7 @@ I will also be making full use of the Facebook Page and continuously run campaig
 
 
 [Top of the page](#top)
-## <a name="features">7. Features & End Product</a>
+## <a name="features">8. Features & End Product</a>
 
 ### Landing Page
 
@@ -518,7 +518,7 @@ Error 404 and Server 500 error custom page:<br>
 
 
 [Top of the page](#top)
-## <a name="future">7. Potential Features</a>
+## <a name="future">9. Potential Features</a>
 
 Due to time constraints I haven't been able to impelement some of the changes I had planned.<br>
 ![future features](media/future_features.png)
@@ -526,7 +526,7 @@ Due to time constraints I haven't been able to impelement some of the changes I 
 
 
 [Top of the page](#top)
-## <a name="deployment">8. Deployment</a>
+## <a name="deployment">10. Deployment</a>
 
 ### First Deployment
 
@@ -678,7 +678,7 @@ Your requirements.txt file should look like this:<br>
 
 [Top of the page](#top)
 
-## <a name="bugs">7. Bugs</a>
+## <a name="bugs">11. Bugs</a>
 
 ### Known Fixed Bugs
 Problem:<br>
@@ -712,7 +712,7 @@ The CSS files someitmes doesn't load on the first attempt. The browsers needs to
 
 [Top of the page](#top)
 
-## <a name="credits">8. Credits</a>
+## <a name="credits">12. Credits</a>
 
 - [Stack Overflow](https://stackoverflow.com/) for help with code troubleshooting and suggestions on best practices.
 
