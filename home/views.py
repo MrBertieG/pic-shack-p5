@@ -8,7 +8,7 @@ from django.contrib import messages
 
 def index(request):
     """View to return the index page"""
-    products = Product.objects.order_by('created_on')
+    products = Product.objects.order_by('-created_on')
 
     context = {
         'products': products,

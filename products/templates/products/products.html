@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">All Prints</h2>
+                <h2 class="logo-font" id="top-page">All Prints</h2>
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
@@ -18,7 +18,7 @@
                 <hr class="w-50 mb-1">
             </div>
         </div>
-        <div class="row">
+        <div class="row m-0">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2">
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
@@ -80,36 +80,6 @@
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
                                             <br>
-                                            {% if request.user.is_superuser %}
-                                            <small class="ml-3">
-                                              <a href="{% url 'edit_product' product.id %}" class="btn btn-sm main-btn ms-2 text-decoration-none text-info delete-anchor" id="edit-btn">Edit <i class="fas fa-pen fa-sm"></i></a> | 
-                                              <!-- Modal trigger button -->
-                                              <button type="button" class="btn btn-sm main-btn ms-2 text-danger" data-toggle="modal" data-target="#deleteModal">
-                                                  Delete  <i class="far fa-trash-alt"></i>
-                                              </button> 
-                                          </small>
-                      
-                                          <!-- Modal for deleting a post-->
-                                          <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                              <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                      <h5 class="modal-title" id="deleteModalLabel">You are deleting a product!</h5>
-                                                      <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><strong>X</strong></button>
-                                                  </div>
-                                                      <div class="modal-body">
-                                                          Are you sure you want to delete this product?
-                                                      </div>
-                                                      <div class="modal-footer">
-                                                          <div class="btn d-inline-block btn-danger">
-                                                              <a class="text-decoration-none delete-anchor text-white" href="{% url 'delete_product' product.id %}">Delete <i class="far fa-trash-alt"></i></a>
-                                                          </div>
-                                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +111,7 @@
         </div>
     </div>
     <div class="shadow-sm rounded-0 border border-black">
-        <a class="d-flex h-100">
+        <a class="d-flex h-100"  href="#top-page">
             <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
         </a>	
     </div>
