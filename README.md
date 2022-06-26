@@ -50,9 +50,43 @@ The prodject has been developed using Django 3.2 framework.
 - Marketing
 
 ### [8. Features & End Product](#features)
-- Landing Page:
-- Custom 404 Not Found Page
-- Custom 500 Server Error
+- [Landing Page:](#landingpage)
+	- Responsive NavBar
+	- Auto updating Basket
+	- Carousel
+	- New Arrivals Section
+- [Footer:](#footer)
+	- Responsive Footer
+	- Subscription Input
+	- Social Media Links
+	- Contact Us Link
+- [All Products Page:](#allproducts)
+	- Responsive
+	- Filtering Option
+- [Product Detail Page:](#productdetail)
+	- Responsive
+	- Leave or delete a Review
+	- Message Success or Error validation
+	- Admin can Delete | Edit product
+	- Admin can Delete reviews
+	- Delete Modal Alert
+- [Shopping Bag Page:](#basket)
+	- Responsive
+	- Message Success or Error validation
+	- Qty increments
+	- Remove | Update items
+- [Checkout Page:](#checkout)
+	- As a guest user
+	- As a registered user
+	- Secure payemnt
+	- Email order confirmation
+- [Product Management CRUD:](#prodmanage)
+	- Add a product
+	- Edit a product
+	- Delete a Product
+- [Error Pages](#error)
+	- Custom 404 Not Found Page
+	- Custom 500 Server Error Page
 
 ### [9. Potential Features](#future)
 
@@ -399,7 +433,7 @@ I will also be making full use of the Facebook Page and continuously run campaig
 [Top of the page](#top)
 ## <a name="features">8. Features & End Product</a>
 
-### Landing Page
+### <a name="landingpage">Landing Page</a>
 
 Desktop Carousel:<br>
 ![carousel](media/features_img/index_carousel_1.png)
@@ -429,6 +463,10 @@ Mobile Footer:<br>
 ![footer](media/features_img/footer_small_10.png)
 <br><br>
 
+[Top of the page](#top)
+
+### <a name="allproducts">All Products</a>
+
 Desktop All Products:<br>
 ![all products](media/features_img/all_products_large_11.png)
 <br><br>
@@ -436,6 +474,10 @@ Desktop All Products:<br>
 Mobile Desktop All Products:<br>
 ![all products](media/features_img/all_products_medium_12.png)
 <br><br>
+
+[Top of the page](#top)
+
+### <a name="productdetail">Product Detail</a>
 
 Desktop Product Detail:<br>
 ![product detail](media/features_img/product_detail_large_13.png)
@@ -454,6 +496,11 @@ Mobile Toast Success:<br>
 ![message success](media/features_img/toast_small_success_checkout_17.png)
 <br><br>
 
+[Top of the page](#top)
+
+
+### <a name="basket">Shopping Bag</a>
+
 Desktop Shopping Bag:<br>
 ![shopping bag](media/features_img/shopping_bag_large_18.png)
 <br><br>
@@ -461,6 +508,11 @@ Desktop Shopping Bag:<br>
 Mobile Shopping Bag:<br>
 ![shopping bag](media/features_img/shopping_bag_small_19.png)
 <br><br>
+
+[Top of the page](#top)
+
+
+### <a name="checkout">Checkout</a>
 
 Desktop Checkout:<br>
 ![checkout](media/features_img/checkout_large_20.png)
@@ -482,6 +534,10 @@ Confirmation Order Email:<br>
 ![email confirmation](media/features_img/confirmation_email_24.png)
 <br><br>
 
+[Top of the page](#top)
+
+
+### <a name="prodmanage">Product Management</a>
 
 Desktop Product Management:<br>
 ![add products](media/features_img/add_product_large_25.png)
@@ -511,6 +567,11 @@ Desktop Add Review:<br>
 Mobile Add Review:<br>
 ![add review](media/features_img/add_review_small_31.png)
 <br><br>
+
+[Top of the page](#top)
+
+
+### <a name="error">Error Page</a>
 
 Error 404 and Server 500 error custom page:<br>
 ![error 404 and 500](media/features_img/error_404_500.png)
@@ -706,7 +767,7 @@ Other bugs included:
 <br><br>
 
 ### Existing Bugs
-The CSS files someitmes doesn't load on the first attempt. The browsers needs to be hard refreshed and the CSS document will kick in. 
+The CSS file someitmes doesn't load on the first attempt. The browsers needs to be hard refreshed and the CSS document will kick in. This is to do with stored cache. A quick fix is to hard refresh the page or prowse in incognito mode. Long fix would be to work a solution on how to load the CSS and JS faster.
 
 <br><br>
 
